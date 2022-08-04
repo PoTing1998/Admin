@@ -1,0 +1,114 @@
+﻿@model admin.Models.User
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.會員帳號)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.會員帳號)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.會員密碼)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.會員密碼)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.頭像檔名)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.頭像檔名)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.姓名)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.姓名)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.暱稱)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.暱稱)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.郵遞區號)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.郵遞區號)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.地址)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.地址)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.電話)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.電話)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.註冊時間)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.註冊時間)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.帳號權限)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.帳號權限)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.資料更新時間)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.資料更新時間)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Is啟用)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Is啟用)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Is刪除)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Is刪除)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.違規次數)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.違規次數)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.備註)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.備註)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.會員id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

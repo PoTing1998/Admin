@@ -1,0 +1,259 @@
+﻿@model IEnumerable<admin.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    
+
+     table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+         white-space: nowrap;
+       }
+
+
+       table {
+  border-collapse: collapse;
+  border: 1px solid #cdcdcd;
+  font: normal 12px arial;
+  width: 100%;
+}
+td,
+th {
+  border: 1px solid #cdcdcd;
+  padding: 8px;
+}
+
+@@media only screen and (max-width: 760px),
+  (min-device-width: 768px) and (max-device-width: 1024px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border-bottom: 2px solid #690461;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50% !important;
+    text-align: left !important;
+    wid
+
+      white-space: nowrap;
+
+            overflow: hidden; 
+
+            text-overflow: ellipsis ;
+            
+  }
+  
+  td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+  }
+
+  td:nth-of-type(1):before {
+    content: "會員帳號";
+    color: #0e9893;
+  }
+  td:nth-of-type(2):before {
+    content: "會員密碼";
+    color: #0e9893;
+  }
+  td:nth-of-type(3):before {
+    content: "Job Title";
+    color: #0e9893;
+  }
+  td:nth-of-type(4):before {
+    content: "姓名";
+    color: #0e9893;
+  }
+  td:nth-of-type(5):before {
+    content: "郵遞區號";
+    color: #0e9893;
+  }
+  td:nth-of-type(6):before {
+    content: "Email";
+    color: #0e9893;
+  }
+    td:nth-of-type(7):before {
+    content: "郵遞區號";
+    color: #0e9893;
+  }
+  td:nth-of-type(8):before {
+    content: "地址";
+    color: #0e9893;
+  }
+    td:nth-of-type(9):before {
+    content: "電話";
+    color: #0e9893;
+  }
+
+    td:nth-of-type(10):before {
+    content: "創建時間";
+    color: #0e9893;
+  }
+    td:nth-of-type(11):before {
+    content: "使用權限";
+    color: #0e9893;
+  }
+    td:nth-of-type(12):before {
+    content: "更新時間";
+    color: #0e9893;
+  }
+}
+
+
+</style>
+
+
+<h1>使用者資訊</h1>
+
+<p>
+    <a class="btn btn-warning" asp-action="Create">Create New</a>
+</p>
+<div class="table-responsive"> 
+<table class="table table-hover"  style="table-layout:fixed" >
+    <thead>
+        <tr>
+         
+
+            <th>
+                @Html.DisplayNameFor(model => model.會員帳號)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.會員密碼)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.頭像檔名)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.姓名)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.暱稱)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.郵遞區號)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.地址)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.電話)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.註冊時間)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.帳號權限)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.資料更新時間)
+            </th>
+          @*  <th>
+                @Html.DisplayNameFor(model => model.Is啟用)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Is刪除)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.違規次數)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.備註)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.會員帳號)
+            </td>
+            <td  style="max-width: 110px;
+
+overflow: hidden;
+
+text-overflow: ellipsis;
+
+white-space: nowrap;">
+                @Html.DisplayFor(modelItem => item.會員密碼)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.頭像檔名)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.姓名)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.暱稱)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.郵遞區號)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.地址)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.電話)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.註冊時間)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.帳號權限)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.資料更新時間)
+            </td>
+        @*    <td>
+                @Html.DisplayFor(modelItem => item.Is啟用)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Is刪除)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.違規次數)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.備註)
+            </td>
+            <td>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.會員id">Edit</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.會員id">Details</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.會員id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

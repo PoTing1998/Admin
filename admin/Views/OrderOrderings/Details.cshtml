@@ -1,0 +1,114 @@
+﻿@model admin.Models.OrderOrdering
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>OrderOrdering</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品id快照)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品id快照)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.子項id快照)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.子項id快照)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品名稱快照)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品名稱快照)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.子項名稱快照)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.子項名稱快照)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品主圖快照)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品主圖快照)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.子項獨立編號)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.子項獨立編號)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.長快照)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.長快照)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.寬快照)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.寬快照)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.高快照)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.高快照)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.啟用日期)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.啟用日期)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.停用日期)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.停用日期)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品郵遞區號快照)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品郵遞區號快照)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品地址快照)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品地址快照)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Is買方取消)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Is買方取消)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Is賣方取消)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Is賣方取消)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.訂單)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.訂單.訂單id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.No">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

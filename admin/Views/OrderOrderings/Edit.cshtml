@@ -1,0 +1,109 @@
+﻿@model admin.Models.OrderOrdering
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>OrderOrdering</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="訂單id" class="control-label"></label>
+                <select asp-for="訂單id" class="form-control" asp-items="ViewBag.訂單id"></select>
+                <span asp-validation-for="訂單id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="商品id快照" class="control-label"></label>
+                <input asp-for="商品id快照" class="form-control" />
+                <span asp-validation-for="商品id快照" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="子項id快照" class="control-label"></label>
+                <input asp-for="子項id快照" class="form-control" />
+                <span asp-validation-for="子項id快照" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="商品名稱快照" class="control-label"></label>
+                <input asp-for="商品名稱快照" class="form-control" />
+                <span asp-validation-for="商品名稱快照" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="子項名稱快照" class="control-label"></label>
+                <input asp-for="子項名稱快照" class="form-control" />
+                <span asp-validation-for="子項名稱快照" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="商品主圖快照" class="control-label"></label>
+                <input asp-for="商品主圖快照" class="form-control" />
+                <span asp-validation-for="商品主圖快照" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="子項獨立編號" class="control-label"></label>
+                <input asp-for="子項獨立編號" class="form-control" />
+                <span asp-validation-for="子項獨立編號" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="長快照" class="control-label"></label>
+                <input asp-for="長快照" class="form-control" />
+                <span asp-validation-for="長快照" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="寬快照" class="control-label"></label>
+                <input asp-for="寬快照" class="form-control" />
+                <span asp-validation-for="寬快照" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="高快照" class="control-label"></label>
+                <input asp-for="高快照" class="form-control" />
+                <span asp-validation-for="高快照" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="啟用日期" class="control-label"></label>
+                <input asp-for="啟用日期" class="form-control" />
+                <span asp-validation-for="啟用日期" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="停用日期" class="control-label"></label>
+                <input asp-for="停用日期" class="form-control" />
+                <span asp-validation-for="停用日期" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="商品郵遞區號快照" class="control-label"></label>
+                <input asp-for="商品郵遞區號快照" class="form-control" />
+                <span asp-validation-for="商品郵遞區號快照" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="商品地址快照" class="control-label"></label>
+                <input asp-for="商品地址快照" class="form-control" />
+                <span asp-validation-for="商品地址快照" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Is買方取消" class="control-label"></label>
+                <input asp-for="Is買方取消" class="form-control" />
+                <span asp-validation-for="Is買方取消" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Is賣方取消" class="control-label"></label>
+                <input asp-for="Is賣方取消" class="form-control" />
+                <span asp-validation-for="Is賣方取消" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="No" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

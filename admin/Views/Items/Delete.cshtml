@@ -1,0 +1,147 @@
+﻿@model admin.Models.Item
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品名稱)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品名稱)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品主圖)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品主圖)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品簡述)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品簡述)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品詳述)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品詳述)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品郵遞區號)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品郵遞區號)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品地址)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品地址)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品分類)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品分類)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品條件)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品條件)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.租賃時間下限)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.租賃時間下限)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品參數)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品參數)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.賣方id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.賣方id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.瀏覽次數)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.瀏覽次數)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.聯絡姓名)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.聯絡姓名)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.聯絡email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.聯絡email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.聯絡電話)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.聯絡電話)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.聯絡line)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.聯絡line)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.聯絡網址)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.聯絡網址)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.創建時間)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.創建時間)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.修改時間)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.修改時間)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Is啟用)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Is啟用)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Is刪除)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Is刪除)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="商品id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
