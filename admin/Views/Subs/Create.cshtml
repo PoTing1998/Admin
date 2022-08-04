@@ -1,0 +1,92 @@
+﻿@model admin.Models.Sub
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Sub</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="子項id" class="control-label"></label>
+                <input asp-for="子項id" class="form-control" />
+                <span asp-validation-for="子項id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="商品id" class="control-label"></label>
+                <select asp-for="商品id" class ="form-control" asp-items="ViewBag.商品id"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="子項名稱" class="control-label"></label>
+                <input asp-for="子項名稱" class="form-control" />
+                <span asp-validation-for="子項名稱" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="子項主圖" class="control-label"></label>
+                <input asp-for="子項主圖" class="form-control" />
+                <span asp-validation-for="子項主圖" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="子項簡述" class="control-label"></label>
+                <input asp-for="子項簡述" class="form-control" />
+                <span asp-validation-for="子項簡述" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="子項數量" class="control-label"></label>
+                <input asp-for="子項數量" class="form-control" />
+                <span asp-validation-for="子項數量" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="子項單價" class="control-label"></label>
+                <input asp-for="子項單價" class="form-control" />
+                <span asp-validation-for="子項單價" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="長" class="control-label"></label>
+                <input asp-for="長" class="form-control" />
+                <span asp-validation-for="長" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="寬" class="control-label"></label>
+                <input asp-for="寬" class="form-control" />
+                <span asp-validation-for="寬" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="高" class="control-label"></label>
+                <input asp-for="高" class="form-control" />
+                <span asp-validation-for="高" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="創建時間" class="control-label"></label>
+                <input asp-for="創建時間" class="form-control" />
+                <span asp-validation-for="創建時間" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Is啟用" class="control-label"></label>
+                <input asp-for="Is啟用" class="form-control" />
+                <span asp-validation-for="Is啟用" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Is刪除" class="control-label"></label>
+                <input asp-for="Is刪除" class="form-control" />
+                <span asp-validation-for="Is刪除" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

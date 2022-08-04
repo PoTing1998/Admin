@@ -1,0 +1,90 @@
+﻿@model admin.Models.Sub
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Sub</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.子項名稱)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.子項名稱)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.子項主圖)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.子項主圖)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.子項簡述)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.子項簡述)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.子項數量)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.子項數量)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.子項單價)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.子項單價)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.長)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.長)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.寬)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.寬)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.高)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.高)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.創建時間)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.創建時間)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Is啟用)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Is啟用)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Is刪除)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Is刪除)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.商品)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.商品.商品id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.子項id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

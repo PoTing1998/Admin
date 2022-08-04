@@ -1,0 +1,48 @@
+﻿@model admin.Models.Cart
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Cart</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.子項id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.子項id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.數量)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.數量)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.會員id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.會員id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Is刪除)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Is刪除)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Is結帳)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Is結帳)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.購物車項目id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

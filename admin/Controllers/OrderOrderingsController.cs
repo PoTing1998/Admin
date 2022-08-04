@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using admin.Models;
+using X.PagedList;
 
 namespace admin.Controllers
 {
@@ -19,10 +20,13 @@ namespace admin.Controllers
         }
 
         // GET: OrderOrderings
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int ? page=1)
         {
-            var lockerLuckContext = _context.OrderOrderings.Include(o => o.訂單);
-            return View(await lockerLuckContext.ToListAsync());
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            //var lockerLuckContext = _context.OrderOrderings.Include(o => o.訂單);
+            //return View(await lockerLuckContext.ToListAsync());
+            return View(_context.OrderOrderings.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: OrderOrderings/Details/5

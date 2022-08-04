@@ -1,6 +1,12 @@
 ﻿using admin.Models;
 using Microsoft.AspNetCore.Mvc;
+using QRCoder;
 using System.Diagnostics;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
+using System;
+using ZXing.QrCode.Internal;
 
 namespace admin.Controllers
 {
@@ -12,6 +18,8 @@ namespace admin.Controllers
         {
             _logger = logger;
         }
+
+        
 
         public IActionResult Index()
         {

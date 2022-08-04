@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using admin.Models;
+using X.PagedList;
 
 namespace admin.Controllers
 {
@@ -19,11 +20,14 @@ namespace admin.Controllers
         }
 
         // GET: Users
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int ? page =1)
         {
-              return _context.Users != null ? 
-                          View(await _context.Users.ToListAsync()) :
-                          Problem("Entity set 'LockerLuckContext.Users'  is null.");
+            int pageSize = 10;
+            int pageNumber = (page ?? 1);
+            //return _context.Users != null ? 
+            //              View(await _context.Users.ToListAsync()) :
+            //              Problem("Entity set 'LockerLuckContext.Users'  is null.");
+            return View(_context.Users.ToPagedList(pageNumber, pageSize));
         }
 
         // GET: Users/Details/5

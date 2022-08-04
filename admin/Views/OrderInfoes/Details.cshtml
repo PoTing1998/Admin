@@ -1,0 +1,66 @@
+﻿@model admin.Models.OrderInfo
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>OrderInfo</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.付款金額)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.付款金額)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.創建時間)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.創建時間)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.下單id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.下單id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.訂單留言)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.訂單留言)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.付款方式)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.付款方式)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.折扣代碼)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.折扣代碼)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.折扣數據)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.折扣數據)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.付款id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.付款id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.訂單id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

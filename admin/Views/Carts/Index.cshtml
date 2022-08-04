@@ -1,0 +1,59 @@
+﻿@model IEnumerable<admin.Models.Cart>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.子項id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.數量)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.會員id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Is刪除)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Is結帳)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.子項id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.數量)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.會員id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Is刪除)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Is結帳)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.購物車項目id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.購物車項目id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.購物車項目id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

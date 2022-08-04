@@ -1,0 +1,69 @@
+﻿@model admin.Models.OrderInfo
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>OrderInfo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="訂單id" />
+            <div class="form-group">
+                <label asp-for="付款金額" class="control-label"></label>
+                <input asp-for="付款金額" class="form-control" />
+                <span asp-validation-for="付款金額" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="創建時間" class="control-label"></label>
+                <input asp-for="創建時間" class="form-control" />
+                <span asp-validation-for="創建時間" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="下單id" class="control-label"></label>
+                <input asp-for="下單id" class="form-control" />
+                <span asp-validation-for="下單id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="訂單留言" class="control-label"></label>
+                <input asp-for="訂單留言" class="form-control" />
+                <span asp-validation-for="訂單留言" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="付款方式" class="control-label"></label>
+                <input asp-for="付款方式" class="form-control" />
+                <span asp-validation-for="付款方式" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="折扣代碼" class="control-label"></label>
+                <input asp-for="折扣代碼" class="form-control" />
+                <span asp-validation-for="折扣代碼" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="折扣數據" class="control-label"></label>
+                <input asp-for="折扣數據" class="form-control" />
+                <span asp-validation-for="折扣數據" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="付款id" class="control-label"></label>
+                <input asp-for="付款id" class="form-control" />
+                <span asp-validation-for="付款id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
