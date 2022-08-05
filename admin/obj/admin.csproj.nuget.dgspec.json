@@ -1,29 +1,34 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\PoTing1998\\Admin\\admin\\admin.csproj": {}
+    "C:\\Users\\Student\\Source\\Repos\\PoTing1998\\Admin\\admin\\admin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\PoTing1998\\Admin\\admin\\admin.csproj": {
+    "C:\\Users\\Student\\Source\\Repos\\PoTing1998\\Admin\\admin\\admin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\PoTing1998\\Admin\\admin\\admin.csproj",
+        "projectUniqueName": "C:\\Users\\Student\\Source\\Repos\\PoTing1998\\Admin\\admin\\admin.csproj",
         "projectName": "admin",
-        "projectPath": "C:\\Users\\User\\source\\repos\\PoTing1998\\Admin\\admin\\admin.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\PoTing1998\\Admin\\admin\\obj\\",
+        "projectPath": "C:\\Users\\Student\\Source\\Repos\\PoTing1998\\Admin\\admin\\admin.csproj",
+        "packagesPath": "C:\\Users\\Student\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Student\\Source\\Repos\\PoTing1998\\Admin\\admin\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://nuget.telerik.com/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -65,17 +70,9 @@
               "target": "Package",
               "version": "[6.0.7, )"
             },
-            "QRCoder": {
-              "target": "Package",
-              "version": "[1.4.3, )"
-            },
             "X.PagedList.Mvc.Core": {
               "target": "Package",
               "version": "[8.4.3, )"
-            },
-            "ZXing.Net": {
-              "target": "Package",
-              "version": "[0.16.8, )"
             }
           },
           "imports": [
@@ -96,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

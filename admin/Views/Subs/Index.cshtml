@@ -238,6 +238,15 @@ li a:hover:not(.active)
     background-color: hsl(50,100%,50%);
 }
 
+.content{
+   max-width: 110px;
+
+overflow: hidden;
+
+text-overflow: ellipsis;
+
+white-space: nowrap;
+}
 </style>
 <h1>商品詳細資訊</h1>
 
@@ -293,13 +302,7 @@ li a:hover:not(.active)
             <td>
                 @Html.DisplayFor(modelItem => item.子項名稱)
             </td>
-            <td style="max-width: 110px;
-
-overflow: hidden;
-
-text-overflow: ellipsis;
-
-white-space: nowrap;">
+            <td class="content">
                @Html.DisplayFor(modelItem => item.子項主圖)
        @*        <img src= "@Url.Content(item.子項主圖)" alt="Image" />*@
             </td>
@@ -307,19 +310,19 @@ white-space: nowrap;">
                 @Html.DisplayFor(modelItem => item.子項簡述)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.子項數量)
+                @Html.DisplayFor(modelItem => item.子項數量)個
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.子項單價)
+                @Html.DisplayFor(modelItem => item.子項單價)元
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.長)
+                @Html.DisplayFor(modelItem => item.長)cm
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.寬)
+                @Html.DisplayFor(modelItem => item.寬)cm
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.高)
+                @Html.DisplayFor(modelItem => item.高)cm
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.創建時間)

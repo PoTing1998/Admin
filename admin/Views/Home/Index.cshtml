@@ -8,3 +8,66 @@
   
 
 </div>
+
+<div class="col-4" >
+    <div> <h2>條件</h2></div>
+<canvas id="mychart"></canvas>
+</div>
+<div class="col-8" >
+<canvas ></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+<script>
+
+    
+//var ctx = document.getElementById("mychart"),
+//        mychart = new Chart(ctx, {
+//            type: "doughnut", // 圖表類型
+//            data: {
+//                labels: ['Test1', 'Test2', 'Test3'], // 標題
+//                datasets: [{
+//                    label: "# myLabel", // 標籤
+//                    data: [20, 16, 32], // 資料
+//                    backgroundColor: [  // 顏色
+//                        "LightSkyBlue",
+//                        "LightPink",
+//                        "LightGray"
+//                    ],
+//                }]
+//            },
+//        });
+
+
+
+  var userdata = @Html.Raw(ViewBag.mydata);
+var ctx = document.getElementById("mychart"),
+        example = new Chart(ctx, {
+            type: "bar", // 圖表類型
+            data: {
+                labels: [ "1", "2", "3" ], // 標題
+                datasets: [{
+                    data: userdata,     // 資料
+                    backgroundColor: [  // 背景色 (照順序輪用)
+                        "LightSkyBlue",
+                        "LightPink",
+                        "LightGray",
+                        "red"
+                    ],
+                }]
+            },
+            options: {
+                maintainAspectRatio: true, // 固定長寬比
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'left',
+                        boxWidth:50
+                     
+                    }
+                }
+            }
+        });
+
+
+</script>

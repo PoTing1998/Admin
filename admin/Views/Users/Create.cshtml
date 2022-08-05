@@ -62,22 +62,22 @@
                 <input asp-for="電話" class="form-control" />
                 <span asp-validation-for="電話" class="text-danger"></span>
             </div>
-            <div class="form-group">
+         @*   <div class="form-group">
                 <label asp-for="註冊時間" class="control-label"></label>
                 <input asp-for="註冊時間" class="form-control" />
                 <span asp-validation-for="註冊時間" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="帳號權限" class="control-label"></label>
                 <input asp-for="帳號權限" class="form-control" />
                 <span asp-validation-for="帳號權限" class="text-danger"></span>
             </div>
-            <div class="form-group">
+         @*   <div class="form-group">
                 <label asp-for="資料更新時間" class="control-label"></label>
                 <input asp-for="資料更新時間" class="form-control" />
                 <span asp-validation-for="資料更新時間" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+          @*  <div class="form-group">
                 <label asp-for="Is啟用" class="control-label"></label>
                 <input asp-for="Is啟用" class="form-control" />
                 <span asp-validation-for="Is啟用" class="text-danger"></span>
@@ -86,7 +86,7 @@
                 <label asp-for="Is刪除" class="control-label"></label>
                 <input asp-for="Is刪除" class="form-control" />
                 <span asp-validation-for="Is刪除" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="違規次數" class="control-label"></label>
                 <input asp-for="違規次數" class="form-control" />
@@ -97,7 +97,7 @@
                 <input asp-for="備註" class="form-control" />
                 <span asp-validation-for="備註" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div style="padding:10px" class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
@@ -105,7 +105,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

@@ -58,7 +58,7 @@
                 <input asp-for="高" class="form-control" />
                 <span asp-validation-for="高" class="text-danger"></span>
             </div>
-            <div class="form-group">
+           @* <div class="form-group">
                 <label asp-for="創建時間" class="control-label"></label>
                 <input asp-for="創建時間" class="form-control" />
                 <span asp-validation-for="創建時間" class="text-danger"></span>
@@ -72,8 +72,8 @@
                 <label asp-for="Is刪除" class="control-label"></label>
                 <input asp-for="Is刪除" class="form-control" />
                 <span asp-validation-for="Is刪除" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+            <div style="padding:10px" class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -81,7 +81,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-secondary" asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {
