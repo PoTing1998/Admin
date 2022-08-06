@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using admin.Models;
 using X.PagedList;
+using System.Linq;
 
 namespace admin.Controllers
 {
@@ -20,15 +17,52 @@ namespace admin.Controllers
         }
 
         // GET: Subs
-        public async Task<IActionResult> Index(int? page = 1)
+        public async Task<IActionResult> Index(string sortOrder, string searchString, int? page = 1)
         {
-            //var lockerLuckContext = _context.Subs.Include(s => s.商品);
-            //return View(await lockerLuckContext.ToListAsync());
 
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            return View(_context.Subs.ToPagedList(pageNumber, pageSize));
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var subs = from s in _context.Subs
+                        select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                subs = _context.Subs.Where(s => s.子項名稱.Contains(searchString) || s.子項單價.ToString().Contains(searchString)); ;
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    subs = subs.OrderByDescending(s => s.子項名稱);
+                    break;
+                case "Date":
+                    subs = subs.OrderBy(s => s.創建時間);
+                    break;
+                case "date_desc":
+                    subs = subs.OrderByDescending(s => s.創建時間);
+                    break;
+                default:
+                    subs = subs.OrderBy(s => s.子項名稱);
+                    break;
+            }
+
+
+
+            return View( subs.ToPagedList(pageNumber, pageSize));
         }
+
+        //public async Task<IActionResult> Index(int? page = 1)
+        //{
+        //    //var lockerLuckContext = _context.Subs.Include(s => s.商品);
+        //    //return View(await lockerLuckContext.ToListAsync());
+
+        //    int pageSize = 10;
+        //    int pageNumber = (page ?? 1);
+        //    return View(_context.Subs.ToPagedList(pageNumber, pageSize));
+        //}
+
+
 
         // GET: Subs/Details/5
         public async Task<IActionResult> Details(string id)

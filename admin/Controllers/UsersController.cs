@@ -20,15 +20,48 @@ namespace admin.Controllers
         }
 
         // GET: Users
-        public async Task<IActionResult> Index(int ? page =1)
+        public async Task<IActionResult> Index(string sortOrder, string searchString, int? page = 1)
         {
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            //return _context.Users != null ? 
-            //              View(await _context.Users.ToListAsync()) :
-            //              Problem("Entity set 'LockerLuckContext.Users'  is null.");
-            return View(_context.Users.ToPagedList(pageNumber, pageSize));
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var Users = from s in _context.Users
+                        select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                Users = _context.Users.Where(s => s.姓名.Contains(searchString) || s.地址.Contains(searchString)); ;
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    Users = Users.OrderByDescending(s => s.姓名);
+                    break;
+                case "Date":
+                    Users = Users.OrderBy(s => s.註冊時間);
+                    break;
+                case "date_desc":
+                    Users = Users.OrderByDescending(s => s.註冊時間);
+                    break;
+                default:
+                    Users = Users.OrderBy(s => s.姓名);
+                    break;
+            }
+
+            return View( Users.ToPagedList(pageNumber, pageSize));
         }
+
+
+        //public async Task<IActionResult> Index()
+        //{
+        //    
+        //    //return _context.Users != null ? 
+        //    //              View(await _context.Users.ToListAsync()) :
+        //    //              Problem("Entity set 'LockerLuckContext.Users'  is null.");
+        //    return View(await_context.Users.ToPagedList();
+        //}
+
 
         // GET: Users/Details/5
         public async Task<IActionResult> Details(string id)

@@ -262,6 +262,12 @@ white-space: nowrap;
 <p>
     <a class="btn btn-warning" asp-action="Create">Create New</a>
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        商品名稱: @Html.TextBox("SearchString")  
+        <input type="submit" value="Search" /></p>
+}
 <div class="table-responsive"> 
 <table class="table table-hover" style="table-layout:fixed">
     <thead>
@@ -278,9 +284,9 @@ white-space: nowrap;
             <th>
                 @Html.DisplayNameFor(model => model.子項名稱快照)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.商品主圖快照)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.子項獨立編號)
             </th>
@@ -294,7 +300,8 @@ white-space: nowrap;
                 @Html.DisplayNameFor(model => model.高快照)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.啟用日期)
+                @*@Html.DisplayNameFor(model => model.啟用日期)*@
+                 @Html.ActionLink("啟用日期", "Index", new { sortOrder = ViewBag.DateSortParm })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.停用日期)
@@ -332,9 +339,9 @@ white-space: nowrap;
             <td>
                 @Html.DisplayFor(modelItem => item.子項名稱快照)
             </td>
-            <td>
+          @*  <td>
                 @Html.DisplayFor(modelItem => item.商品主圖快照)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.子項獨立編號)
             </td>

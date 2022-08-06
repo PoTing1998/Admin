@@ -253,6 +253,12 @@ white-space: nowrap;
 <p>
     <a class="btn btn-warning" asp-action="Create">Create New</a>
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+       商品名稱&單價: @Html.TextBox("SearchString")  
+        <input type="submit" value="Search" /></p>
+}
 <div class="table-responsive">
 <table class="table table-hover" style="table-layout:fixed">
     <thead>
@@ -282,7 +288,8 @@ white-space: nowrap;
                 @Html.DisplayNameFor(model => model.高)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.創建時間)
+              @*  @Html.DisplayNameFor(model => model.創建時間)*@
+                 @Html.ActionLink("註冊時間", "Index", new { sortOrder = ViewBag.DateSortParm })
             </th>
         @*    <th>
                 @Html.DisplayNameFor(model => model.Is啟用)

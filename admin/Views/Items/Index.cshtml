@@ -262,7 +262,7 @@ white-space: nowrap;
 @using (Html.BeginForm())
 {
     <p>
-        Find by name: @Html.TextBox("SearchString")  
+        找尋條件&名稱: @Html.TextBox("SearchString")  
         <input type="submit" value="Search" /></p>
 }
 <div class="table-responsive"> 
@@ -296,9 +296,9 @@ white-space: nowrap;
             <th>
                 @Html.DisplayNameFor(model => model.租賃時間下限)
             </th>
-            <th>
+           @* <th>
                 @Html.DisplayNameFor(model => model.商品參數)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.賣方id)
             </th>
@@ -366,9 +366,9 @@ white-space: nowrap;
             <td>
                 @Html.DisplayFor(modelItem => item.租賃時間下限)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.商品參數)
-            </td>
+            </td>*@
             <td class="content" >
                 @Html.DisplayFor(modelItem => item.賣方id)
             </td>

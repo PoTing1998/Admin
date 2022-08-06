@@ -20,40 +20,50 @@ namespace admin.Controllers
         }
 
         // GET: OrderOrderings
-        public async Task<IActionResult> Index(int ? page=1)
+        public async Task<IActionResult> Index(string sortOrder, string searchString, int? page = 1)
         {
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            
-            //var lockerLuckContext = _context.OrderOrderings.Include(o => o.訂單);
-            //return View(await lockerLuckContext.ToListAsync());
-            return View(_context.OrderOrderings.ToPagedList(pageNumber, pageSize));
 
-            //public ActionResult Index(string sortOrder)
-            //{
-            //    ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            //    ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
-            //    var students = from s in db.Students
-            //                   select s;
-            //    switch (sortOrder)
-            //    {
-            //        case "name_desc":
-            //            students = students.OrderByDescending(s => s.LastName);
-            //            break;
-            //        case "Date":
-            //            students = students.OrderBy(s => s.EnrollmentDate);
-            //            break;
-            //        case "date_desc":
-            //            students = students.OrderByDescending(s => s.EnrollmentDate);
-            //            break;
-            //        default:
-            //            students = students.OrderBy(s => s.LastName);
-            //            break;
-            //    }
-            //    return View(students.ToList());
-            //}
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var orderOrderings = from s in _context.OrderOrderings
+                       select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                orderOrderings = _context.OrderOrderings.Where(s => s.商品名稱快照.Contains(searchString) ); ;
+            }
 
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    orderOrderings = orderOrderings.OrderByDescending(s => s.子項名稱快照);
+                    break;
+                case "Date":
+                    orderOrderings = orderOrderings.OrderBy(s => s.啟用日期);
+                    break;
+                case "date_desc":
+                    orderOrderings = orderOrderings.OrderByDescending(s => s.啟用日期);
+                    break;
+                default:
+                    orderOrderings = orderOrderings.OrderBy(s => s.子項名稱快照);
+                    break;
+            }
+
+
+            return View(orderOrderings.ToPagedList(pageNumber, pageSize));
         }
+
+
+        //public async Task<IActionResult> Index(int? page = 1)
+        //{
+        //    int pageSize = 10;
+        //    int pageNumber = (page ?? 1);
+
+        //    //var lockerLuckContext = _context.OrderOrderings.Include(o => o.訂單);
+        //    //return View(await lockerLuckContext.ToListAsync());
+        //    return View(_context.OrderOrderings.ToPagedList(pageNumber, pageSize));
+        //}
 
         // GET: OrderOrderings/Details/5
         public async Task<IActionResult> Details(int? id)

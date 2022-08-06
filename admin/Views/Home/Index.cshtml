@@ -4,13 +4,13 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+   @* <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
   
 
 </div>
 
-<div class="col-4" >
-    <div> <h2>條件</h2></div>
+<div class="col-6" >
+    <div> <h4>會員使用刊登商品數量</h4></div>
 <canvas id="mychart"></canvas>
 </div>
 <div class="col-8" >
@@ -29,14 +29,15 @@ var ctx = document.getElementById("mychart"),
         example = new Chart(ctx, {
             type: "bar", // 圖表類型
             data: {
-                labels: [ "1", "2", "3" ], // 標題
+                labels: [ "joe", "杉彬彬", "3",'管理員' ], // 標題
                 datasets: [{
+                    label :"商品數量",
                     data: userdata,     // 資料
                     backgroundColor: [  // 背景色 (照順序輪用)
                         "LightSkyBlue",
                         "LightPink",
-                        "LightGray",
-                        "red"
+                        "LightGray"
+                        
                     ],
                 }]
             },
@@ -46,8 +47,9 @@ var ctx = document.getElementById("mychart"),
                 responsive: true,
                 plugins: {
                     legend: {
+                        
                         position: 'left',
-                        boxWidth:50
+                        //boxWidth:50
                      
                     }
                 }

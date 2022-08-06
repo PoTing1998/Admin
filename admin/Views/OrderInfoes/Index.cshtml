@@ -249,19 +249,28 @@ li a:hover:not(.active)
 <p>
     <a class="btn btn-warning" asp-action="Create">Create New</a>
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+       商品名稱&單價: @Html.TextBox("SearchString")  
+        <input type="submit" value="Search" /></p>
+}
 <div class="table-responsive"> 
 <table class="table table-hover"  style="table-layout:fixed" >
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.付款金額)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.創建時間)
-            </th>
-            <th>
+              <th>
                 @Html.DisplayNameFor(model => model.下單id)
             </th>
+            <th>
+              @*  @Html.DisplayNameFor(model => model.付款金額)*@
+                 @Html.ActionLink("金額", "Index", new { sortOrder = ViewBag.PriceSortParm })
+            </th>
+            <th>
+                @*@Html.DisplayNameFor(model => model.創建時間)*@
+                 @Html.ActionLink("註冊時間", "Index", new { sortOrder = ViewBag.DateSortParm })
+            </th>
+          
             <th>
                 @Html.DisplayNameFor(model => model.訂單留言)
             </th>
@@ -283,15 +292,16 @@ li a:hover:not(.active)
     <tbody>
 @foreach (var item in Model) {
         <tr>
+             <td>
+                @Html.DisplayFor(modelItem => item.下單id)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.付款金額)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.創建時間)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.下單id)
-            </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.訂單留言)
             </td>

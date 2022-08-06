@@ -36,14 +36,19 @@ namespace admin.Controllers
 
             //依照需求撈資料
             var mydata = _context.Items.
-                GroupBy(m => m.瀏覽次數).
-                Select(x => new { label = x.Key, data = x.Count() }).ToList();
+                GroupBy(m => m.聯絡姓名).
+                Select(x => new { label = x.Key, data = x.Count() }).ToList()
+              
+                
+                ;
+
 
             //把資料存成List
             foreach (var item in mydata)
             {
                 datalist.Add(item.data);
             }
+        
 
             //序列化
             ViewBag.mydata = JsonSerializer.Serialize(datalist);

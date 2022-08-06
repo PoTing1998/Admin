@@ -20,16 +20,48 @@ namespace admin.Controllers
         }
 
         // GET: OrderInfoes
-        public async Task<IActionResult> Index(int ? page =1)
+        public async Task<IActionResult> Index(string sortOrder, string searchString, int? page = 1)
            
         {
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            //return _context.OrderInfos != null ? 
-            //              View(await _context.OrderInfos.ToListAsync()) :
-            //              Problem("Entity set 'LockerLuckContext.OrderInfos'  is null.");
-            return View(_context.OrderInfos.ToPagedList(pageNumber, pageSize));
+            ViewBag.PriceSortParm = String.IsNullOrEmpty(sortOrder) ? "price_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var orderInfos = from s in _context.OrderInfos
+                       select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                orderInfos = _context.OrderInfos.Where(s => s.付款金額.ToString().Contains(searchString) ); ;
+            }
+            switch (sortOrder)
+            {
+                case "price_desc":
+                    orderInfos = orderInfos.OrderByDescending(s => s.付款金額);
+                    break;
+                case "Date":
+                    orderInfos = orderInfos.OrderBy(s => s.創建時間);
+                    break;
+                case "date_desc":
+                    orderInfos = orderInfos.OrderByDescending(s => s.創建時間);
+                    break;
+                default:
+                    orderInfos = orderInfos.OrderBy(s => s.付款金額);
+                    break;
+            }
+
+
+            return View( orderInfos.ToPagedList(pageNumber, pageSize));
         }
+
+        //public async Task<IActionResult> Index()
+
+        //{
+      
+        //    //return _context.OrderInfos != null ? 
+        //    //              View(await _context.OrderInfos.ToListAsync()) :
+        //    //              Problem("Entity set 
+        //}
+
 
         // GET: OrderInfoes/Details/5
         public async Task<IActionResult> Details(string id)
