@@ -23,7 +23,7 @@ namespace admin.Controllers
   
 
         // GET: Items
-        public async Task<IActionResult> Index(int ? page=1)
+        public async Task<IActionResult> Index(string sortOrder , string searchString, int ? page=1)
         {
 
 
@@ -31,10 +31,37 @@ namespace admin.Controllers
             //    View(await _context.Items.ToListAsync());
             //:Problem("Entity set 'LockerLuckContext.Items'  is null.");
 
+
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            return View( _context.Items.ToPagedList(pageNumber, pageSize)); 
+            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            var items =from s in _context.Items
+                      select s;
 
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                items = _context.Items.Where(s => s.商品名稱.Contains(searchString)
+                                       || s.商品條件.Contains(searchString));;
+            }
+
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    items = items.OrderByDescending(s => s.聯絡姓名);
+                    break;
+                case "Date":
+                    items = items.OrderBy(s => s.創建時間);
+                    break;
+                case "date_desc":
+                    items = items.OrderByDescending(s => s.創建時間);
+                    break;
+                default:
+                    items = items.OrderBy(s => s.聯絡姓名);
+                    break;
+            }
+
+            return View(items.ToPagedList(pageNumber, pageSize));
 
         }
 

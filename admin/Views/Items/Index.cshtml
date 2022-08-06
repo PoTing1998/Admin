@@ -259,6 +259,12 @@ white-space: nowrap;
 <p>
     <a class="btn btn-warning" asp-action="Create">Create New</a>
 </p>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")  
+        <input type="submit" value="Search" /></p>
+}
 <div class="table-responsive"> 
 <table class="table table-hover" style="table-layout:fixed">
     <thead>
@@ -266,7 +272,7 @@ white-space: nowrap;
             <th>
                 @Html.DisplayNameFor(model => model.商品名稱)
             </th>
-            <th>
+       @*     <th>
                 @Html.DisplayNameFor(model => model.商品主圖)
             </th>
             <th>
@@ -283,7 +289,7 @@ white-space: nowrap;
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.商品分類)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.商品條件)
             </th>
@@ -315,7 +321,8 @@ white-space: nowrap;
                 @Html.DisplayNameFor(model => model.聯絡網址)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.創建時間)
+               @* @Html.DisplayNameFor(model => model.創建時間)*@
+                 @Html.ActionLink("註冊時間", "Index", new { sortOrder = ViewBag.DateSortParm })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.修改時間)
@@ -335,7 +342,7 @@ white-space: nowrap;
             <td class="content">
                 @Html.DisplayFor(modelItem => item.商品名稱)
             </td>
-          <td class="content">
+     @*     <td class="content">
                 @Html.DisplayFor(modelItem => item.商品主圖)
             </td>
             <td class="content" >
@@ -352,8 +359,8 @@ white-space: nowrap;
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.商品分類)
-            </td>
-            <td>
+            </td>*@
+            <td class="content" >
                 @Html.DisplayFor(modelItem => item.商品條件)
             </td>
             <td>
@@ -362,7 +369,7 @@ white-space: nowrap;
             <td>
                 @Html.DisplayFor(modelItem => item.商品參數)
             </td>
-            <td>
+            <td class="content" >
                 @Html.DisplayFor(modelItem => item.賣方id)
             </td>
             <td>
@@ -371,7 +378,7 @@ white-space: nowrap;
             <td>
                 @Html.DisplayFor(modelItem => item.聯絡姓名)
             </td>
-            <td>
+           <td class="content" >
                 @Html.DisplayFor(modelItem => item.聯絡email)
             </td>
             <td>
@@ -380,7 +387,7 @@ white-space: nowrap;
             <td>
                 @Html.DisplayFor(modelItem => item.聯絡line)
             </td>
-            <td>
+            <td class="content" >
                 @Html.DisplayFor(modelItem => item.聯絡網址)
             </td>
             <td>
