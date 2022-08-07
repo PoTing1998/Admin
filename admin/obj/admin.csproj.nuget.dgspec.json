@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\admin.csproj": {}
+    "C:\\Users\\User\\source\\repos\\Admin\\admin\\admin.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\admin.csproj": {
+    "C:\\Users\\User\\source\\repos\\Admin\\admin\\admin.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\admin.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\Admin\\admin\\admin.csproj",
         "projectName": "admin",
-        "projectPath": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\admin.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\Admin\\admin\\admin.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\Admin\\admin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -68,6 +68,10 @@
             "X.PagedList.Mvc.Core": {
               "target": "Package",
               "version": "[8.4.3, )"
+            },
+            "jquery-qrcode": {
+              "target": "Package",
+              "version": "[1.0.0, )"
             }
           },
           "imports": [

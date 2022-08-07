@@ -1359,3 +1359,6 @@ C:\Users\User\Source\Repos\Admin\admin\obj\Debug\net6.0\refint\admin.dll
 C:\Users\User\Source\Repos\Admin\admin\obj\Debug\net6.0\admin.pdb
 C:\Users\User\Source\Repos\Admin\admin\obj\Debug\net6.0\admin.genruntimeconfig.cache
 C:\Users\User\Source\Repos\Admin\admin\obj\Debug\net6.0\ref\admin.dll
+C:\Users\Student\Desktop\Admin\admin\bin\Debug\net6.0\JetBrains.Annotations.dll
+C:\Users\Student\Desktop\Admin\admin\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\Student\Desktop\Admin\admin\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll

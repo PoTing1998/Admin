@@ -20,6 +20,9 @@
           "lib/netstandard2.0/JetBrains.Annotations.dll": {}
         }
       },
+      "jquery-qrcode/1.0.0": {
+        "type": "package"
+      },
       "MessagePack/2.1.152": {
         "type": "package",
         "dependencies": {
@@ -3273,6 +3276,23 @@
         "lib/netstandard2.0/JetBrains.Annotations.xml",
         "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.dll",
         "lib/portable40-net40+sl5+win8+wp8+wpa81/JetBrains.Annotations.xml"
+      ]
+    },
+    "jquery-qrcode/1.0.0": {
+      "sha512": "IhZFtN0GJbNOoJGkE9SehugS9l1dCkdoUqKLn1u2icqEsnrI3eDwMeEO7idxlGb3l03TYzdYXNZYh+2uNcNfyw==",
+      "type": "package",
+      "path": "jquery-qrcode/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Scripts/jquery.qrcode.js",
+        "content/Scripts/jquery.qrcode.min.js",
+        "content/Scripts/jquery.qrcode.min.js.map",
+        "content/Scripts/qrcode.js",
+        "content/Scripts/qrcode.min.js",
+        "content/Scripts/qrcode.min.js.map",
+        "jquery-qrcode.1.0.0.nupkg.sha512",
+        "jquery-qrcode.nuspec"
       ]
     },
     "MessagePack/2.1.152": {
@@ -9952,7 +9972,8 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.7",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.7",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.7",
-      "X.PagedList.Mvc.Core >= 8.4.3"
+      "X.PagedList.Mvc.Core >= 8.4.3",
+      "jquery-qrcode >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9961,11 +9982,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\admin.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\Admin\\admin\\admin.csproj",
       "projectName": "admin",
-      "projectPath": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\admin.csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\Admin\\admin\\admin.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\Admin\\admin\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10022,6 +10043,10 @@
           "X.PagedList.Mvc.Core": {
             "target": "Package",
             "version": "[8.4.3, )"
+          },
+          "jquery-qrcode": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           }
         },
         "imports": [
