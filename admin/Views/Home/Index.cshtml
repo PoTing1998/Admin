@@ -9,13 +9,16 @@
 
 </div>
 
-<div class="col-6" >
-    <div> <h4>會員使用刊登商品數量</h4></div>
+<div class="col-4" >
+    <div> <h4>會員使用刊登商品數量</h4></div> 
 <canvas id="mychart"></canvas>
 </div>
-<div class="col-8" >
-<canvas ></canvas>
+
+<div class="col-6" >
+<canvas id="myChart2"></canvas>
 </div>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
 <script>
@@ -24,7 +27,7 @@
 
 
 
-  var userdata = @Html.Raw(ViewBag.mydata);
+  var userdata = @Html.Raw(ViewBag.itemsData);
 var ctx = document.getElementById("mychart"),
         example = new Chart(ctx, {
             type: "bar", // 圖表類型
@@ -48,7 +51,7 @@ var ctx = document.getElementById("mychart"),
                 plugins: {
                     legend: {
                         
-                        position: 'left',
+                        position: 'top',
                         //boxWidth:50
                      
                     }
@@ -56,5 +59,24 @@ var ctx = document.getElementById("mychart"),
             }
         });
 
+
+         var itemData = @Html.Raw(ViewBag.銷售);
+        var ctx = document.getElementById('myChart2').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                datasets: [{
+                    label: '銷售數量',
+                    data: itemData /*[20, 22.3, 25, 26, 28, 31.2, 33]*/,
+                    fill: false,
+                    borderColor: 'rgb(75, 192, 192)',
+                }]
+            },
+        });
+ 
+
+
+      
 
 </script>
