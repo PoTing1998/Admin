@@ -14,7 +14,8 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.7",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.7",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.7",
-          "X.PagedList.Mvc.Core": "8.4.3"
+          "X.PagedList.Mvc.Core": "8.4.3",
+          "jquery-qrcode": "1.0.0"
         },
         "runtime": {
           "admin.dll": {}
@@ -36,6 +37,7 @@
           }
         }
       },
+      "jquery-qrcode/1.0.0": {},
       "MessagePack/2.1.152": {
         "dependencies": {
           "MessagePack.Annotations": "2.1.152",
@@ -2359,6 +2361,13 @@
       "sha512": "sha512-ASfpoFJxiRsC9Xc4TWuPM41Zb/gl64xwfMOhnOZ3RnVWGYIZchjpWQV5zshJgoc/ZxVtgjaF7b577lURj7E6ig==",
       "path": "jetbrains.annotations/2022.1.0",
       "hashPath": "jetbrains.annotations.2022.1.0.nupkg.sha512"
+    },
+    "jquery-qrcode/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IhZFtN0GJbNOoJGkE9SehugS9l1dCkdoUqKLn1u2icqEsnrI3eDwMeEO7idxlGb3l03TYzdYXNZYh+2uNcNfyw==",
+      "path": "jquery-qrcode/1.0.0",
+      "hashPath": "jquery-qrcode.1.0.0.nupkg.sha512"
     },
     "MessagePack/2.1.152": {
       "type": "package",

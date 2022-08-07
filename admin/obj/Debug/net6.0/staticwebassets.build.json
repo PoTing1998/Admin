@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AsINMxEODnfsxJEWFxjlSzQx8fG/3r05lim3feNFgoc=",
+  "Hash": "+31kK/0z2wwyN6iNIMLlYpLduB392Gv/U/jYiRPsL4o=",
   "Source": "admin",
   "BasePath": "_content/admin",
   "Mode": "Default",
@@ -1071,6 +1071,57 @@
       "OriginalItemSpec": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\admin.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\css\\itemsTable.css",
+      "SourceId": "admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\",
+      "BasePath": "_content/admin",
+      "RelativePath": "css/itemsTable.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\itemsTable.css"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\css\\OrderInfoesTable.css",
+      "SourceId": "admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\",
+      "BasePath": "_content/admin",
+      "RelativePath": "css/OrderInfoesTable.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\OrderInfoesTable.css"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\css\\OrderOrderingsTable.css",
+      "SourceId": "admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\",
+      "BasePath": "_content/admin",
+      "RelativePath": "css/OrderOrderingsTable.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\OrderOrderingsTable.css"
+    },
+    {
       "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\css\\site.css",
       "SourceId": "admin",
       "SourceType": "Discovered",
@@ -1086,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\css\\SubsTable.css",
+      "SourceId": "admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\",
+      "BasePath": "_content/admin",
+      "RelativePath": "css/SubsTable.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\SubsTable.css"
     },
     {
       "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\css\\Table.css",
@@ -1105,6 +1173,23 @@
       "OriginalItemSpec": "wwwroot\\css\\Table.css"
     },
     {
+      "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\css\\UsersTable.css",
+      "SourceId": "admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\",
+      "BasePath": "_content/admin",
+      "RelativePath": "css/UsersTable.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\UsersTable.css"
+    },
+    {
       "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\favicon.ico",
       "SourceId": "admin",
       "SourceType": "Discovered",
@@ -1120,6 +1205,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\js\\qr.js",
+      "SourceId": "admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\",
+      "BasePath": "_content/admin",
+      "RelativePath": "js/qr.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\qr.js"
     },
     {
       "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\js\\site.js",
@@ -2106,6 +2208,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\lib\\qrcode.js",
+      "SourceId": "admin",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\Source\\Repos\\Admin\\admin\\wwwroot\\",
+      "BasePath": "_content/admin",
+      "RelativePath": "lib/qrcode.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\lib\\qrcode.js"
     }
   ]
 }
