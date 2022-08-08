@@ -68,10 +68,6 @@
             "X.PagedList.Mvc.Core": {
               "target": "Package",
               "version": "[8.4.3, )"
-            },
-            "jquery-qrcode": {
-              "target": "Package",
-              "version": "[1.0.0, )"
             }
           },
           "imports": [

@@ -32,41 +32,26 @@ namespace admin.Controllers
         }
         public IActionResult Index()
         {
-            List<int> itemsList = new List<int>();
-            List<int> 銷售數量 = new List<int>();
+            List<int> datalist = new List<int>();
 
             //依照需求撈資料
             var mydata = _context.Items.
                 GroupBy(m => m.聯絡姓名).
                 Select(x => new { label = x.Key, data = x.Count() }).ToList()
+              
+                
                 ;
 
-            var 銷量 = _context.OrderOrderings.
-                GroupBy(m => m.子項名稱快照).
-                Select(x => new
-                {
-                    label = x.Key,
-                    data = x.Count
-                ()
-                }).ToList();
-
-     
 
             //把資料存成List
             foreach (var item in mydata)
             {
-                itemsList.Add(item.data);
+                datalist.Add(item.data);
             }
-
-            foreach (var item in 銷量)
-            {
-                銷售數量.Add(item.data);
-            }
-
+        
 
             //序列化
-            ViewBag.itemsData = JsonSerializer.Serialize(itemsList);
-            ViewBag.銷售 = JsonSerializer.Serialize(銷售數量);
+            ViewBag.mydata = JsonSerializer.Serialize(datalist);
 
             return View();
         }
