@@ -22,7 +22,7 @@ namespace admin.Controllers
 
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.PriceSortParm = String.IsNullOrEmpty(sortOrder) ? "price_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var subs = from s in _context.Subs
                         select s;
@@ -33,8 +33,8 @@ namespace admin.Controllers
 
             switch (sortOrder)
             {
-                case "name_desc":
-                    subs = subs.OrderByDescending(s => s.子項名稱);
+                case "price_desc":
+                    subs = subs.OrderByDescending(s => s.子項單價);
                     break;
                 case "Date":
                     subs = subs.OrderBy(s => s.創建時間);
@@ -43,7 +43,7 @@ namespace admin.Controllers
                     subs = subs.OrderByDescending(s => s.創建時間);
                     break;
                 default:
-                    subs = subs.OrderBy(s => s.子項名稱);
+                    subs = subs.OrderBy(s => s.子項單價);
                     break;
             }
 

@@ -23,7 +23,7 @@
 @using (Html.BeginForm())
 {
     <p>
-        找尋條件&名稱: @Html.TextBox("SearchString")  
+        找尋條件&名稱&瀏覽次數: @Html.TextBox("SearchString")  
         <input type="submit" value="Search" /></p>
 }
 <div class="table-responsive"> 
@@ -64,7 +64,8 @@
                 @Html.DisplayNameFor(model => model.賣方id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.瀏覽次數)
+            @*    @Html.DisplayNameFor(model => model.瀏覽次數)*@
+                  @Html.ActionLink("瀏覽次數", "Index", new { sortOrder = ViewBag.browseSortParm })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.聯絡姓名)

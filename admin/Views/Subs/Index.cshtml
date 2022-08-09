@@ -39,7 +39,8 @@
                 @Html.DisplayNameFor(model => model.子項數量)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.子項單價)
+             @*   @Html.DisplayNameFor(model => model.子項單價)*@
+                 @Html.ActionLink("子項單價", "Index", new { sortOrder = ViewBag.PriceSortParm })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.長)
@@ -69,14 +70,14 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+          <td style="width:100px">
                 @Html.DisplayFor(modelItem => item.子項名稱)
             </td>
           @*  <td class="content">
                @Html.DisplayFor(modelItem => item.子項主圖)
 
             </td>*@
-            <td>
+             <td class="content">
                 @Html.DisplayFor(modelItem => item.子項簡述)
             </td>
             <td>

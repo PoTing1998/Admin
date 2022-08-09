@@ -58,7 +58,8 @@
                  @Html.ActionLink("啟用日期", "Index", new { sortOrder = ViewBag.DateSortParm })
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.停用日期)
+               @* @Html.DisplayNameFor(model => model.停用日期)*@
+                 @Html.ActionLink("停用日期", "Index", new { sortOrder =  ViewBag.EndSortParm })
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.商品郵遞區號快照)

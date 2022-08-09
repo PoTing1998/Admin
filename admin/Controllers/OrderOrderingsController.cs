@@ -25,7 +25,7 @@ namespace admin.Controllers
             int pageSize = 10;
             int pageNumber = (page ?? 1);
 
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.EndSortParm = String.IsNullOrEmpty(sortOrder) ? "end_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var orderOrderings = from s in _context.OrderOrderings
                        select s;
@@ -36,8 +36,8 @@ namespace admin.Controllers
 
             switch (sortOrder)
             {
-                case "name_desc":
-                    orderOrderings = orderOrderings.OrderByDescending(s => s.子項名稱快照);
+                case "end_desc":
+                    orderOrderings = orderOrderings.OrderByDescending(s => s.停用日期);
                     break;
                 case "Date":
                     orderOrderings = orderOrderings.OrderBy(s => s.啟用日期);
@@ -46,7 +46,7 @@ namespace admin.Controllers
                     orderOrderings = orderOrderings.OrderByDescending(s => s.啟用日期);
                     break;
                 default:
-                    orderOrderings = orderOrderings.OrderBy(s => s.子項名稱快照);
+                    orderOrderings = orderOrderings.OrderBy(s => s.停用日期);
                     break;
             }
 

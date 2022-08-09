@@ -1,6 +1,6 @@
 ﻿
 table {
-    width: 100%;
+ /*   width: 100%;*/
     display: block;
     overflow-x: auto;
     white-space: nowrap;
@@ -11,7 +11,7 @@ table {
     border-collapse: collapse;
     border: 1px solid #cdcdcd;
     font: normal 12px arial;
-    width: 100%;
+/*    width: 100%;*/
 }
 
 td,

@@ -34,7 +34,7 @@ namespace admin.Controllers
 
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewBag.browseSortParm = String.IsNullOrEmpty(sortOrder) ? "browse_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var items =from s in _context.Items
                       select s;
@@ -42,13 +42,13 @@ namespace admin.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 items = _context.Items.Where(s => s.商品名稱.Contains(searchString)
-                                       || s.商品條件.Contains(searchString));;
+                                       || s.商品條件.Contains(searchString) || s.瀏覽次數.ToString().Contains(searchString)); ;
             }
 
             switch (sortOrder)
             {
-                case "name_desc":
-                    items = items.OrderByDescending(s => s.聯絡姓名);
+                case "browse_desc":
+                    items = items.OrderByDescending(s => s.瀏覽次數);
                     break;
                 case "Date":
                     items = items.OrderBy(s => s.創建時間);
@@ -57,7 +57,7 @@ namespace admin.Controllers
                     items = items.OrderByDescending(s => s.創建時間);
                     break;
                 default:
-                    items = items.OrderBy(s => s.聯絡姓名);
+                    items = items.OrderBy(s => s.瀏覽次數);
                     break;
             }
 

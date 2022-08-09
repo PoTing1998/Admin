@@ -9,19 +9,42 @@
 
 </div>
 
-<div class="col-4" >
-    <div> <h4>會員使用刊登商品數量</h4></div> 
-<canvas id="mychart"></canvas>
+@*<div class="container">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
+            <div> <h4>會員使用刊登商品數量</h4></div> 
+                 <canvas id="mychart"></canvas>
+
+        </div>
+
+    
+
+    </div>
+    
+
+</div>*@
+@*<div class="container">
+    <div class="row">
+        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+               <h4 style="text-align:center"> <span >會員下單數量 </span></h4>
+                 <canvas id="mychart3"></canvas>
+
+        </div>
+
+         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12"  >
+             <h4 style="text-align:center"> <span >商品銷售數量 </span></h4>
+                     <canvas id="myChart2"></canvas>
+        </div>
+
+    </div>
+    
+
 </div>
+
 
 <div class="col-6" >
     <div> <h4 style="text-align:center">商品銷售數量</h4></div> 
-<canvas id="myChart2"></canvas>
-</div>
-
-<div class="col-6" >
-    <div> <h4 style="text-align:center">商品銷售數量</h4></div> 
-<canvas id="myChart3"></canvas>
+            <canvas id="myChart1"></canvas>
 </div>
 
 
@@ -30,7 +53,7 @@
 <canvas id="myChart4"></canvas>
 </div>
 
-
+*@
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
@@ -44,7 +67,7 @@
       
 var ctx = document.getElementById("mychart"),
         example = new Chart(ctx, {
-            type: "pie", // 圖表類型
+            type: "bar", // 圖表類型
             data: {
                 labels: [ "joe", "杉彬彬", "黃",'管理員' ], // 標題
                 datasets: [{
@@ -67,7 +90,7 @@ var ctx = document.getElementById("mychart"),
                     legend: {
                         
                         position: 'top',
-                        //boxWidth:50
+                     
                      
                     }
                 }
@@ -79,32 +102,79 @@ var ctx = document.getElementById("mychart"),
 
 
         
-         var itemData = @Html.Raw(ViewBag.銷售);
-        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var itemData = @Html.Raw(ViewBag.銷售);
+        var ctx2 = document.getElementById('myChart2')/*.getContext('2d')*/;
         var myChart = new Chart(ctx2, {
-            type: 'bar',
+            type: 'doughnut',
             data: {
                 labels: ['TIIDA大空間', '二等格格', '三等艙', '三等格格', '六等艙', '文件箱', '四等箱','均一價','頭等格格'],
                 datasets: [{
                     label: '銷售數量',
                     data: itemData ,
-                    fill: false,
+                    //fill: false,
                     backgroundColor:[  // 背景色 (照順序輪用)
-                        "LightSkyBlue",
+                       "LightSkyBlue",
                         "LightPink",
-                        "Lightred",
+                        "LightGray",
+                        "LightBlue",
                         
                     ],
                 }]
             },
+            options: {
+                plugins: {
+                   datalabels: {
+                        formatter: (itemData) => {
+                           return itemData + '%';
+                        }
+                    }
+                }
+            }
         });
       
 
 
 
-</script>
 
+ var count = @Html.Raw( ViewBag.次數);
+      
+var ctx3 = document.getElementById("mychart3"),
+        example = new Chart(ctx3, {
+            type: "bar", // 圖表類型
+            data: {
+                labels: ["joe", "杉彬彬", "黃", '管理員',"杉彬彬", "黃", '管理員' ], // 標題
+                datasets: [{
+                    label :"使用者下單數量",
+                    data: count,     // 資料
+                    backgroundColor: [  // 背景色 (照順序輪用)
+                        "LightSkyBlue",
+                        "LightPink",
+                        "LightGray",
+                        "LightBlue",
+                        
+                    ],
+                }]
+            },
+            options: {
+
+                maintainAspectRatio: true, // 固定長寬比
+                responsive: true,
+                plugins: {
+                    legend: {
+                        
+                        position: 'top',
+                     
+                     
+                    }
+                }
+            }
+        });
+
+ 
+</script>
+@*
  <script>
+      var itemTime = @Html.Raw( ViewBag.次數 );
         const ctxx = document.getElementById('myChart3').getContext('2d');
         const myChartx = new Chart(ctxx, {
             type: 'bar',
@@ -112,7 +182,7 @@ var ctx = document.getElementById("mychart"),
                 labels: ['Red', 'Blue', 'Yellow'],
                 datasets: [{
                     label: "TeamA Score",
-                    data: [10, 50, 25, 70, 40],
+                    data: itemTime,
                     backgroundColor: [
                         "rgba(10,20,30,0.3)",
                         "rgba(10,20,30,0.3)",
@@ -213,3 +283,4 @@ var ctx = document.getElementById("mychart"),
         }
         );
     </script>
+*@

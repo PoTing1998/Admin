@@ -37,11 +37,11 @@
                 <input asp-for="子項名稱快照" class="form-control" />
                 <span asp-validation-for="子項名稱快照" class="text-danger"></span>
             </div>
-            <div class="form-group">
+         @*   <div class="form-group">
                 <label asp-for="商品主圖快照" class="control-label"></label>
                 <input asp-for="商品主圖快照" class="form-control" />
                 <span asp-validation-for="商品主圖快照" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="子項獨立編號" class="control-label"></label>
                 <input asp-for="子項獨立編號" class="form-control" />
@@ -82,25 +82,25 @@
                 <input asp-for="商品地址快照" class="form-control" />
                 <span asp-validation-for="商品地址快照" class="text-danger"></span>
             </div>
-            <div class="form-group">
+       @*     <div class="form-group">
                 <label asp-for="Is買方取消" class="control-label"></label>
                 <input asp-for="Is買方取消" class="form-control" />
                 <span asp-validation-for="Is買方取消" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+          @*  <div class="form-group">
                 <label asp-for="Is賣方取消" class="control-label"></label>
                 <input asp-for="Is賣方取消" class="form-control" />
                 <span asp-validation-for="Is賣方取消" class="text-danger"></span>
-            </div>
+            </div>*@
             <input type="hidden" asp-for="No" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Save" class="btn btn-primary" style="margin-top:10px" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
+<div style="margin-top:10px">
     <a asp-action="Index">Back to List</a>
 </div>
 
