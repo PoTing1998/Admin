@@ -33,22 +33,81 @@ namespace admin.Controllers
         }
         public IActionResult Index()
         {
+            //List<int> itemsList = new List<int>();
+            //List<int> 銷售數量 = new List<int>();
+            
+            //List<int> 觀看次數 = new List<int>();
+
+
+            //var 商品分類 = _context.Items.Select(p => p.商品分類).Distinct().ToList();
+            //var 瀏覽次數 = _context.Items.Select(p => p.瀏覽次數).OrderByDescending(x => x).ToList();
+
+
+            ////依照需求撈資料
+            //var mydata = _context.Items.
+            //    GroupBy(m => m.賣方id).
+            //    Select(x => new 
+            //    {
+            //        label = x.Key, data = x.Count()
+            //    }).ToList();
+          
+
+
+          
+
+            //var 銷量 = _context.OrderOrderings.
+            //    GroupBy(m => m.子項名稱快照).
+            //    Select(x => new
+            //    {
+            //        label = x.Key,
+            //        data = x.Count
+            //    ()
+            //    }).ToList();
+
+
+
+
+            ////foreach (var item in 瀏覽次數)
+            ////{
+            ////    觀看次數.Add(item.Value);
+            ////}
+
+
+
+
+
+
+
+
+            ////把資料存成List
+            //foreach (var item in mydata)
+            //{
+            //    itemsList.Add(item.data);
+            //}
+
+            //foreach (var item in 銷量)
+            //{
+            //    銷售數量.Add(item.data);
+            //}
+
+
+    
+
+            ////序列化
+          
+            //ViewBag.itemsData = JsonSerializer.Serialize(itemsList);
+            //ViewBag.銷售 = JsonSerializer.Serialize(銷售數量);
+            //ViewBag.次數 = 觀看次數;
+            //return View();
+
             List<int> itemsList = new List<int>();
             List<int> 銷售數量 = new List<int>();
-            List<int> 下單數量 =new List<int> ();
-         
-
+            List<int> 觀看次數 = new List<int>();
             //依照需求撈資料
             var mydata = _context.Items.
                 GroupBy(m => m.賣方id).
                 Select(x => new { label = x.Key, data = x.Count() }).ToList()
                 ;
-          
-
-
-            var my  = _context.Items.Select(p => p.商品分類).Distinct().ToList();
-            var my1 = _context.Items.Select(p => p.瀏覽次數).OrderByDescending(x => x).ToList();
-
 
             var 銷量 = _context.OrderOrderings.
                 GroupBy(m => m.子項名稱快照).
@@ -59,48 +118,34 @@ namespace admin.Controllers
                 ()
                 }).ToList();
 
-
-
-
-
-            //var 數量= _context.OrderInfos.
-            //    GroupBy(m =>m.下單id).
-            //    Select(x => new
-            //        {
-            //        label = x.Key,
-            //        data = x.Count()
-
-            //    }).ToList();
-
-
-
-
-
-
-
+            var 瀏覽次數 = _context.Items.Select(p => p.瀏覽次數).OrderByDescending(x => x).ToList();
 
             //把資料存成List
             foreach (var item in mydata)
             {
                 itemsList.Add(item.data);
             }
-
+            
             foreach (var item in 銷量)
             {
                 銷售數量.Add(item.data);
+           
             }
 
+            foreach (var item in 瀏覽次數)
+            {
+                銷售數量.Add(item.Value);
 
-            //foreach(var item in 數量)
-            //{
-            //    下單數量.Add((int)item.data);
-            //}
+            }
+
+            銷售數量.Sort();
+            銷售數量.Reverse();
 
 
             //序列化
             ViewBag.itemsData = JsonSerializer.Serialize(itemsList);
             ViewBag.銷售 = JsonSerializer.Serialize(銷售數量);
-            //ViewBag.次數 = JsonSerializer.Serialize(下單數量);
+            ViewBag.瀏覽次數 = JsonSerializer.Serialize(銷售數量);
             return View();
         }
 
