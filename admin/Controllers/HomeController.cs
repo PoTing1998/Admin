@@ -42,7 +42,7 @@ namespace admin.Controllers
                 ;
 
             var 銷量 = _context.OrderOrderings.
-                GroupBy(m => m.子項獨立編號).
+                GroupBy(m => m.子項名稱快照).
                 Select(x => new
                 {
                     label = x.Key,

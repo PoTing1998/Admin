@@ -15,8 +15,21 @@
 </div>
 
 <div class="col-6" >
+    <div> <h4 style="text-align:center">商品銷售數量</h4></div> 
 <canvas id="myChart2"></canvas>
 </div>
+
+<div class="col-6" >
+    <div> <h4 style="text-align:center">商品銷售數量</h4></div> 
+<canvas id="myChart3"></canvas>
+</div>
+
+
+<div class="col-6" >
+    <div> <h4 style="text-align:center">商品銷售數量</h4></div> 
+<canvas id="myChart4"></canvas>
+</div>
+
 
 
 
@@ -28,18 +41,20 @@
 
 
   var userdata = @Html.Raw(ViewBag.itemsData);
+      
 var ctx = document.getElementById("mychart"),
         example = new Chart(ctx, {
-            type: "bar", // 圖表類型
+            type: "pie", // 圖表類型
             data: {
-                labels: [ "joe", "杉彬彬", "3",'管理員' ], // 標題
+                labels: [ "joe", "杉彬彬", "黃",'管理員' ], // 標題
                 datasets: [{
                     label :"商品數量",
                     data: userdata,     // 資料
                     backgroundColor: [  // 背景色 (照順序輪用)
                         "LightSkyBlue",
                         "LightPink",
-                        "LightGray"
+                        "LightGray",
+                        "LightBlue",
                         
                     ],
                 }]
@@ -59,24 +74,142 @@ var ctx = document.getElementById("mychart"),
             }
         });
 
+ 
+        
 
+
+        
          var itemData = @Html.Raw(ViewBag.銷售);
-        var ctx = document.getElementById('myChart2').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'line',
+        var ctx2 = document.getElementById('myChart2').getContext('2d');
+        var myChart = new Chart(ctx2, {
+            type: 'bar',
             data: {
-                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                labels: ['TIIDA大空間', '二等格格', '三等艙', '三等格格', '六等艙', '文件箱', '四等箱','均一價','頭等格格'],
                 datasets: [{
                     label: '銷售數量',
-                    data: itemData /*[20, 22.3, 25, 26, 28, 31.2, 33]*/,
+                    data: itemData ,
                     fill: false,
-                    borderColor: 'rgb(75, 192, 192)',
+                    backgroundColor:[  // 背景色 (照順序輪用)
+                        "LightSkyBlue",
+                        "LightPink",
+                        "Lightred",
+                        
+                    ],
                 }]
             },
         });
- 
-
-
       
 
+
+
 </script>
+
+ <script>
+        const ctxx = document.getElementById('myChart3').getContext('2d');
+        const myChartx = new Chart(ctxx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow'],
+                datasets: [{
+                    label: "TeamA Score",
+                    data: [10, 50, 25, 70, 40],
+                    backgroundColor: [
+                        "rgba(10,20,30,0.3)",
+                        "rgba(10,20,30,0.3)",
+                        "rgba(10,20,30,0.3)",
+                        "rgba(10,20,30,0.3)",
+                        "rgba(10,20,30,0.3)"
+                    ],
+                    borderColor: [
+                        "rgba(10,20,30,1)",
+                        "rgba(10,20,30,1)",
+                        "rgba(10,20,30,1)",
+                        "rgba(10,20,30,1)",
+                        "rgba(10,20,30,1)"
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: "TeamB Score",
+                    data: [20, 35, 40, 60, 50],
+                    backgroundColor: [
+                        "rgba(50,150,200,0.3)",
+                        "rgba(50,150,200,0.3)",
+                        "rgba(50,150,200,0.3)",
+                        "rgba(50,150,200,0.3)",
+                        "rgba(50,150,200,0.3)"
+                    ],
+                    borderColor: [
+                        "rgba(50,150,200,1)",
+                        "rgba(50,150,200,1)",
+                        "rgba(50,150,200,1)",
+                        "rgba(50,150,200,1)",
+                        "rgba(50,150,200,1)"
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                // maintainAspectRation: true,
+                responsive: true,
+                // plugins: {
+                //     legend: {
+                //         position: 'top',
+                //     }
+                // }
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min: 0
+                        }
+                    }]
+                }
+            }
+        }
+        );
+    </script>
+
+    <script>
+        const ctd1 = document.getElementById('myChart4').getContext('2d');
+        const myChartd = new Chart(ctd1, {
+            type: 'line',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: "TeamA Score",
+                    data: [10, 50, 25, 70, 40, 30],
+
+                    borderColor: [
+                        "blue",
+                    ],
+                    borderWidth: 1
+                },
+                {
+                    label: "TeamB Score",
+                    data: [20, 35, 40, 60, 50, 10],
+
+                    borderColor: [
+                        "red",
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                // maintainAspectRation: true,
+                responsive: true,
+                // plugins: {
+                //     legend: {
+                //         position: 'top',
+                //     }
+                // }
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            min: 0
+                        }
+                    }]
+                }
+            }
+        }
+        );
+    </script>

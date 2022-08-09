@@ -1,0 +1,240 @@
+﻿
+table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+
+table {
+    border-collapse: collapse;
+    /*  border: 1px solid #cdcdcd;*/
+    font: normal 12px arial;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #cdcdcd;
+    padding: 8px;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+        thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+
+    tr {
+        border-bottom: 2px solid #690461;
+    }
+
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50% !important;
+        text-align: left !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+        td:before {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            font-weight: bold;
+        }
+
+        td:nth-of-type(1):before {
+            content: "訂單ID";
+            color: #0e9893;
+        }
+
+        td:nth-of-type(2):before {
+            content: "金額";
+            color: #0e9893;
+        }
+
+        td:nth-of-type(3):before {
+            content: "下單時間";
+            color: #0e9893;
+        }
+
+        td:nth-of-type(4):before {
+            content: "訂單留言";
+            color: #0e9893;
+        }
+
+        td:nth-of-type(5):before {
+            content: "付款方式";
+            color: #0e9893;
+        }
+
+        td:nth-of-type(6):before {
+            content: "折扣代碼";
+            color: #0e9893;
+        }
+
+        td:nth-of-type(7):before {
+            content: "折扣數據";
+            color: #0e9893;
+        }
+/*        td:nth-of-type(8):before {
+            content: "付款ID";
+            color: #0e9893;
+        }*/
+}
+
+.pagination {
+    display: compact;
+    padding-left: 0;
+    margin: 0;
+    border-radius: 4px;
+}
+
+    .pagination > li {
+        display: inline-grid;
+    }
+
+        .pagination > li > a,
+        .pagination > li > span {
+            position: relative;
+            float: left;
+            padding: 10px;
+            margin-left: -1px;
+            line-height: 1.428571429;
+            text-decoration: none;
+            background-color: #eee;
+            border: 1px solid #dddddd;
+        }
+
+        .pagination > li:first-child > a,
+        .pagination > li:first-child > span {
+            margin-left: 0;
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+        }
+
+        .pagination > li:last-child > a,
+        .pagination > li:last-child > span {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        .pagination > li > a:hover,
+        .pagination > li > span:hover,
+        .pagination > li > a:focus,
+        .pagination > li > span:focus {
+            background-color: #eeeeee;
+        }
+
+    .pagination > .active > a,
+    .pagination > .active > span,
+    .pagination > .active > a:hover,
+    .pagination > .active > span:hover,
+    .pagination > .active > a:focus,
+    .pagination > .active > span:focus {
+        z-index: 2;
+        color: #000;
+        cursor: default;
+        background-color: #428bca;
+        border-color: #428bca;
+    }
+
+    .pagination > .disabled > span,
+    .pagination > .disabled > a,
+    .pagination > .disabled > a:hover,
+    .pagination > .disabled > a:focus {
+        color: #999999;
+        cursor: not-allowed;
+        background-color: #eee;
+        border-color: #dddddd;
+    }
+
+.pagination-lg > li > a,
+.pagination-lg > li > span {
+    padding: 0px;
+    font-size: 18px;
+}
+
+.pagination-lg > li:first-child > a,
+.pagination-lg > li:first-child > span {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.pagination-lg > li:last-child > a,
+.pagination-lg > li:last-child > span {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.pagination-sm > li > a,
+.pagination-sm > li > span {
+    padding: 0;
+    font-size: 12px;
+}
+
+.pagination-sm > li:first-child > a,
+.pagination-sm > li:first-child > span {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+.pagination-sm > li:last-child > a,
+.pagination-sm > li:last-child > span {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /*background-color: #333;*/
+}
+
+li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+    li:last-child {
+        border-right: none;
+    }
+
+    li a {
+        display: block;
+        color: Black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        li a:hover:not(.active) {
+            background-color: hsl(50,100%,50%);
+        }
+
+.active {
+    background-color: hsl(50,100%,50%);
+}
+
+
+
+
