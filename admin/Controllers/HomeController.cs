@@ -33,72 +33,7 @@ namespace admin.Controllers
         }
         public IActionResult Index()
         {
-            //List<int> itemsList = new List<int>();
-            //List<int> 銷售數量 = new List<int>();
-            
-            //List<int> 觀看次數 = new List<int>();
-
-
-            //var 商品分類 = _context.Items.Select(p => p.商品分類).Distinct().ToList();
-            //var 瀏覽次數 = _context.Items.Select(p => p.瀏覽次數).OrderByDescending(x => x).ToList();
-
-
-            ////依照需求撈資料
-            //var mydata = _context.Items.
-            //    GroupBy(m => m.賣方id).
-            //    Select(x => new 
-            //    {
-            //        label = x.Key, data = x.Count()
-            //    }).ToList();
-          
-
-
-          
-
-            //var 銷量 = _context.OrderOrderings.
-            //    GroupBy(m => m.子項名稱快照).
-            //    Select(x => new
-            //    {
-            //        label = x.Key,
-            //        data = x.Count
-            //    ()
-            //    }).ToList();
-
-
-
-
-            ////foreach (var item in 瀏覽次數)
-            ////{
-            ////    觀看次數.Add(item.Value);
-            ////}
-
-
-
-
-
-
-
-
-            ////把資料存成List
-            //foreach (var item in mydata)
-            //{
-            //    itemsList.Add(item.data);
-            //}
-
-            //foreach (var item in 銷量)
-            //{
-            //    銷售數量.Add(item.data);
-            //}
-
-
-    
-
-            ////序列化
-          
-            //ViewBag.itemsData = JsonSerializer.Serialize(itemsList);
-            //ViewBag.銷售 = JsonSerializer.Serialize(銷售數量);
-            //ViewBag.次數 = 觀看次數;
-            //return View();
+           
 
             List<int> itemsList = new List<int>();
             List<int> 銷售數量 = new List<int>();
@@ -121,7 +56,13 @@ namespace admin.Controllers
             var 銷量 = _context.OrderOrderings.GroupBy(m => m.子項名稱快照).OrderByDescending(x => x.Count()).
                 Select(x => new { label = x.Key, data = x.Count() }).ToList()
                 ;
-            var 瀏覽次數 = _context.Items.Select(p => p.瀏覽次數).OrderByDescending(x => x).ToList();
+            //var 瀏覽次數 = _context.Items.Select(p => p.瀏覽次數).OrderByDescending(x => x).ToList();
+         
+
+
+                //var 金額 = from s in _context.OrderInfos
+                //          where s.付款金額.CompareTo("2017/04/12") >= 0 && s.創建時間.CompareTo("2017/04/15") <= 0
+                //          select s;
 
             //把資料存成List
             foreach (var item in mydata)
@@ -135,11 +76,11 @@ namespace admin.Controllers
 
             }
 
-            foreach (var item in 瀏覽次數)
-            {
-                觀看次數.Add(item.Value);
+            //foreach (var item in 瀏覽次數)
+            //{
+            //    觀看次數.Add(item.Value);
 
-            }
+            //}
 
             觀看次數.Sort();
             觀看次數.Reverse();
@@ -148,7 +89,7 @@ namespace admin.Controllers
             //序列化
             ViewBag.itemsData = JsonSerializer.Serialize(itemsList);
             ViewBag.銷售數量 = JsonSerializer.Serialize(銷售數量);
-            ViewBag.瀏覽次數 = JsonSerializer.Serialize(觀看次數);
+            //ViewBag.瀏覽次數 = JsonSerializer.Serialize(觀看次數);
             return View();
         }
 
@@ -163,7 +104,24 @@ namespace admin.Controllers
             return View();
         }
 
+//        public List<Item> Get子項List()
+//        {
+//            List<int> 觀看次數 = new List<int>();
+//            var sql = @"
+//SELECT          SUM(付款金額) AS Expr1
+//FROM              dbo.[Order-Info]
+//WHERE          (創建時間 < CONVERT(DATETIME, '2022-08-01 00:00:00', 102))
 
+//";
+
+//            using (_context)
+//            {
+//                觀看次數 = _context.
+//            }
+
+
+//                return 觀看次數;
+//        }
 
     }
 

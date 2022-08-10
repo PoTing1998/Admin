@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<div class="text-center" style="margin-bottom:50px">
     <h1 class="display-4">Welcome</h1>
    @* <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
   
@@ -59,10 +59,10 @@
 </div>
 
 
-<div class="container">
+@*<div class="container">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
-             <div> <h4>商品瀏覽次數</h4></div> 
+             <div> <h4>商品月銷售</h4></div> 
                 <canvas id="myChart3"></canvas>
         </div>
 
@@ -72,7 +72,7 @@
         </div>
 
     </div>
-</div>
+</div>*@
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
@@ -158,26 +158,26 @@ var ctx = document.getElementById("myChart2"),
 
         
 
-           var time = @Html.Raw(ViewBag.瀏覽次數);
-        var ctx2 = document.getElementById('myChart3').getContext('2d');
-        var myChart = new Chart(ctx2, {
-            type: 'bar',
-            data: {
-                //labels: ['TIIDA大空間', '二等格格', '三等艙', '三等格格','小倉庫','小酒窖', '六等艙', '文件箱', '四等倉','均一價','車庫','單層酒櫃','頭等格格'],
-                labels: ['均一價', '三等格格', '二等格格', 'TIIDA大空間','三等艙'],
-                datasets: [{
-                    label: '銷售數量',
-                    data: time ,
-                    fill: false,
-                    backgroundColor:[  // 背景色 (照順序輪用)
-                        "LightSkyBlue",
-                        "LightPink",
-                        "LightBlue",
+        //   var time = @Html.Raw(ViewBag.瀏覽次數);
+        //var ctx2 = document.getElementById('myChart3').getContext('2d');
+        //var myChart = new Chart(ctx2, {
+        //    type: 'pie',
+        //    data: {
+        //        //labels: ['TIIDA大空間', '二等格格', '三等艙', '三等格格','小倉庫','小酒窖', '六等艙', '文件箱', '四等倉','均一價','車庫','單層酒櫃','頭等格格'],
+        //        labels: ['七月', '八月'],
+        //        datasets: [{
+        //            label: '銷售數量',
+        //            data: [961,27993],
+        //            fill: false,
+        //            backgroundColor:[  // 背景色 (照順序輪用)
+        //                "LightSkyBlue",
+        //                "LightPink",
+        //                "LightBlue",
                         
-                    ],
-                }]
-            },
-        });
+        //            ],
+        //        }]
+        //    },
+        //});
       
 
 
