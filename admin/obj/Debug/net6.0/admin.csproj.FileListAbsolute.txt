@@ -1639,3 +1639,8 @@ D:\Admin\admin\obj\Debug\net6.0\refint\admin.dll
 D:\Admin\admin\obj\Debug\net6.0\admin.pdb
 D:\Admin\admin\obj\Debug\net6.0\admin.genruntimeconfig.cache
 D:\Admin\admin\obj\Debug\net6.0\ref\admin.dll
+C:\Users\Student\Source\Repos\Admin\admin\bin\Debug\net6.0\Dapper.dll
+C:\Users\Student\Source\Repos\Admin\admin\bin\Debug\net6.0\JetBrains.Annotations.dll
+C:\Users\Student\Source\Repos\Admin\admin\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Student\Source\Repos\Admin\admin\bin\Debug\net6.0\X.PagedList.dll
+C:\Users\Student\Source\Repos\Admin\admin\bin\Debug\net6.0\X.PagedList.Mvc.Core.dll

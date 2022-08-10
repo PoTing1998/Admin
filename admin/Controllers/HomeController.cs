@@ -109,15 +109,18 @@ namespace admin.Controllers
                 Select(x => new { label = x.Key, data = x.Count() }).ToList()
                 ;
 
-            var 銷量 = _context.OrderOrderings.
-                GroupBy(m => m.子項名稱快照).
-                Select(x => new
-                {
-                    label = x.Key,
-                    data = x.Count
-                ()
-                }).ToList();
+            //var 銷量 = _context.OrderOrderings.
+            //    GroupBy(m => m.子項名稱快照).
+            //    Select(x => new
+            //    {
+            //        label = x.Key,
+            //        data = x.Count
+            //    ()
+            //    }).ToList();
 
+            var 銷量 = _context.OrderOrderings.GroupBy(m => m.子項名稱快照).OrderByDescending(x => x.Count()).
+                Select(x => new { label = x.Key, data = x.Count() }).ToList()
+                ;
             var 瀏覽次數 = _context.Items.Select(p => p.瀏覽次數).OrderByDescending(x => x).ToList();
 
             //把資料存成List
@@ -125,27 +128,27 @@ namespace admin.Controllers
             {
                 itemsList.Add(item.data);
             }
-            
+
             foreach (var item in 銷量)
             {
                 銷售數量.Add(item.data);
-           
+
             }
 
             foreach (var item in 瀏覽次數)
             {
-                銷售數量.Add(item.Value);
+                觀看次數.Add(item.Value);
 
             }
 
-            銷售數量.Sort();
-            銷售數量.Reverse();
+            觀看次數.Sort();
+            觀看次數.Reverse();
 
 
             //序列化
             ViewBag.itemsData = JsonSerializer.Serialize(itemsList);
-            ViewBag.銷售 = JsonSerializer.Serialize(銷售數量);
-            ViewBag.瀏覽次數 = JsonSerializer.Serialize(銷售數量);
+            ViewBag.銷售數量 = JsonSerializer.Serialize(銷售數量);
+            ViewBag.瀏覽次數 = JsonSerializer.Serialize(觀看次數);
             return View();
         }
 

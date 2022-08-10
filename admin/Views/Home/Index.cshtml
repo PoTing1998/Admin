@@ -51,7 +51,7 @@
         </div>
 
            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
-             <div> <h4>會員使用刊登商品數量</h4></div> 
+             <div> <h4>商品銷售數量排行</h4></div> 
                 <canvas id="myChart2"></canvas>
         </div>
 
@@ -62,7 +62,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
-             <div> <h4>商品銷售數量</h4></div> 
+             <div> <h4>商品瀏覽次數</h4></div> 
                 <canvas id="myChart3"></canvas>
         </div>
 
@@ -121,19 +121,15 @@ var ctx = document.getElementById("myChart"),
         });
 
  
-        
-
-        
-  var time = @Html.Raw(ViewBag.瀏覽次數);
-      
+ var itemData = @Html.Raw( ViewBag.銷售數量);
 var ctx = document.getElementById("myChart2"),
         example = new Chart(ctx, {
             type: "bar", // 圖表類型
             data: {
-                labels: [ "joe", "杉彬彬", "黃",'管理員' ], // 標題
+                labels: [ "均一價", "三等格格", "二等格格",'四等艙' ], // 標題
                 datasets: [{
                     label :"商品數量",
-                    data: time,     // 資料
+                    data: itemData,     // 資料
                     backgroundColor: [  // 背景色 (照順序輪用)
                         "LightSkyBlue",
                         "LightPink",
@@ -161,7 +157,8 @@ var ctx = document.getElementById("myChart2"),
 
 
         
-         var itemData = @Html.Raw(ViewBag.銷售);
+
+           var time = @Html.Raw(ViewBag.瀏覽次數);
         var ctx2 = document.getElementById('myChart3').getContext('2d');
         var myChart = new Chart(ctx2, {
             type: 'bar',
@@ -170,7 +167,7 @@ var ctx = document.getElementById("myChart2"),
                 labels: ['均一價', '三等格格', '二等格格', 'TIIDA大空間','三等艙'],
                 datasets: [{
                     label: '銷售數量',
-                    data: itemData ,
+                    data: time ,
                     fill: false,
                     backgroundColor:[  // 背景色 (照順序輪用)
                         "LightSkyBlue",
