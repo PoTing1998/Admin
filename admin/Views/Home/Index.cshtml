@@ -50,29 +50,30 @@
                 <canvas id="myChart"></canvas>
         </div>
 
-           <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
-             <div> <h4>商品銷售數量排行</h4></div> 
-                <canvas id="myChart2"></canvas>
+   
+                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
+             <div> <h4>每月銷售金額</h4></div> 
+                <canvas id="myChart4"></canvas>
         </div>
-
     </div>
 </div>
 
 
-@*<div class="container">
+<div class="container">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
-             <div> <h4>商品月銷售</h4></div> 
+             <div> <h4>會員成長人數</h4></div> 
                 <canvas id="myChart3"></canvas>
         </div>
 
-           <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
-             <div> <h4>會員使用刊登商品數量</h4></div> 
-                <canvas id="myChart3"></canvas>
-        </div>
+  
 
+                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12"  >
+             <div> <h4>商品銷售數量排行</h4></div> 
+                <canvas id="myChart2"></canvas>
+        </div>
     </div>
-</div>*@
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
@@ -158,66 +159,54 @@ var ctx = document.getElementById("myChart2"),
 
         
 
-        //   var time = @Html.Raw(ViewBag.瀏覽次數);
-        //var ctx2 = document.getElementById('myChart3').getContext('2d');
-        //var myChart = new Chart(ctx2, {
-        //    type: 'pie',
-        //    data: {
-        //        //labels: ['TIIDA大空間', '二等格格', '三等艙', '三等格格','小倉庫','小酒窖', '六等艙', '文件箱', '四等倉','均一價','車庫','單層酒櫃','頭等格格'],
-        //        labels: ['七月', '八月'],
-        //        datasets: [{
-        //            label: '銷售數量',
-        //            data: [961,27993],
-        //            fill: false,
-        //            backgroundColor:[  // 背景色 (照順序輪用)
-        //                "LightSkyBlue",
-        //                "LightPink",
-        //                "LightBlue",
+           var number = @Html.Raw( ViewBag.成長人數);
+        var ctx2 = document.getElementById('myChart3').getContext('2d');
+        var myChart = new Chart(ctx2, {
+            type: 'line',
+            data: {
+                //labels: ['TIIDA大空間', '二等格格', '三等艙', '三等格格','小倉庫','小酒窖', '六等艙', '文件箱', '四等倉','均一價','車庫','單層酒櫃','頭等格格'],
+                labels: ['六月','七月','八月'],
+                datasets: [{
+                    label: '成長人數',
+                    data: number,
+                    fill: false,
+                    backgroundColor:[  // 背景色 (照順序輪用)
+                        "LightSkyBlue",
+                        "LightPink",
+                        "LightBlue",
                         
-        //            ],
-        //        }]
-        //    },
-        //});
+                    ],
+                }]
+            },
+        });
       
 
 
 
         
-    //圖表3
 
-// var count = @Html.Raw( ViewBag.次數);
+
+           var money = @Html.Raw( ViewBag.銷售金額 );
+        var ctx4 = document.getElementById('myChart4').getContext('2d');
+        var myChart4 = new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                //labels: ['TIIDA大空間', '二等格格', '三等艙', '三等格格','小倉庫','小酒窖', '六等艙', '文件箱', '四等倉','均一價','車庫','單層酒櫃','頭等格格'],
+                labels: ['七月', '八月',],
+                datasets: [{
+                    label: '每月銷售金額',
+                    data: money,
+                    fill: false,
+                    backgroundColor:[  // 背景色 (照順序輪用)
+                        "LightSkyBlue",
+                        "LightPink",
+                        "LightBlue",
+                        
+                    ],
+                }]
+            },
+        });
       
-//var ctx3 = document.getElementById("mychart3"),
-//        example = new Chart(ctx3, {
-//            type: "bar", // 圖表類型
-//            data: {
-//                labels: ["joe", "杉彬彬", "黃", '管理員',"杉彬彬", "黃", '管理員' ], // 標題
-//                datasets: [{
-//                    label :"使用者下單數量",
-//                    data: count,     // 資料
-//                    backgroundColor: [  // 背景色 (照順序輪用)
-//                        "LightSkyBlue",
-//                        "LightPink",
-//                        "LightGray",
-//                        "LightBlue",
-                        
-//                    ],
-//                }]
-//            },
-//            options: {
-
-//                maintainAspectRatio: true, // 固定長寬比
-//                responsive: true,
-//                plugins: {
-//                    legend: {
-                        
-//                        position: 'top',
-                     
-                     
-//                    }
-//                }
-//            }
-//        });
 
  
 </script>
