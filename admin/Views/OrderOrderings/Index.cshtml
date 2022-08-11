@@ -13,14 +13,14 @@
 
 <h1>訂單詳細資訊</h1>
 
-<p>
+@*<p>
     <a class="btn btn-warning" asp-action="Create">Create New</a>
-</p>
+</p>*@
 @using (Html.BeginForm())
 {
     <p>
         商品名稱: @Html.TextBox("SearchString")  
-        <input type="submit" value="Search" /></p>
+        <input type="submit" value="搜尋" /></p>
 }
 <div class="table-responsive"> 
 <table class="table table-hover" style="table-layout:fixed">
@@ -131,9 +131,9 @@
                 @Html.DisplayFor(modelItem => item.訂單.訂單id)
             </td>*@
             <td>
-                <a class="btn btn-success"  asp-action="Edit" asp-route-id="@item.No">Edit</a> |
-                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.No">Details</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.No">Delete</a>
+                <a class="btn btn-success"  asp-action="Edit" asp-route-id="@item.No">編輯訂單</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.No">訂單詳細資訊</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.No">刪除訂單</a>
             </td>
         </tr>
 }

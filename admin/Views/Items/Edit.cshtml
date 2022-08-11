@@ -4,9 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>編輯商品</h1>
 
-<h4>Item</h4>
+<h4>商品資訊</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -98,17 +98,17 @@
                 <input asp-for="聯絡網址" class="form-control" />
                 <span asp-validation-for="聯絡網址" class="text-danger"></span>
             </div>
-            <div class="form-group">
+    @*        <div class="form-group">
                 <label asp-for="創建時間" class="control-label"></label>
                 <input asp-for="創建時間" class="form-control" />
                 <span asp-validation-for="創建時間" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="修改時間" class="control-label"></label>
                 <input asp-for="修改時間" class="form-control" />
                 <span asp-validation-for="修改時間" class="text-danger"></span>
             </div>
-            <div class="form-group">
+   @*         <div class="form-group">
                 <label asp-for="Is啟用" class="control-label"></label>
                 <input asp-for="Is啟用" class="form-control" />
                 <span asp-validation-for="Is啟用" class="text-danger"></span>
@@ -117,16 +117,16 @@
                 <label asp-for="Is刪除" class="control-label"></label>
                 <input asp-for="Is刪除" class="form-control" />
                 <span asp-validation-for="Is刪除" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="存檔" class="btn btn-primary" style="margin-top:10px" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div style="margin-top:10px">
+    <a class="btn btn-secondary" asp-action="Index">返回列表</a>
 </div>
 
 @section Scripts {

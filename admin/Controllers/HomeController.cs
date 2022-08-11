@@ -43,7 +43,7 @@ namespace admin.Controllers
 
             //依照需求撈資料
             var mydata = _context.Items.
-                GroupBy(m => m.賣方id).
+                GroupBy(m => m.賣方id).OrderByDescending(m => m.Count()).
                 Select(x => new { label = x.Key, data = x.Count() }).ToList()
                 ;
 
@@ -67,6 +67,7 @@ namespace admin.Controllers
 
 
             var 瀏覽次數 = _context.Items.Select(p => p.瀏覽次數).OrderByDescending(x => x).ToList();
+
             var  七月金額 =( from num  in  _context.OrderInfos
                       where num.創建時間 >date7 && num.創建時間<date8                    
                       select num.付款金額).Sum();

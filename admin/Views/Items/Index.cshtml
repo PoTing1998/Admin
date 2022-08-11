@@ -17,14 +17,14 @@
 
 <h1>商品資訊</h1>
 
-<p>
+@*<p>
     <a class="btn btn-warning" asp-action="Create">Create New</a>
-</p>
+</p>*@
 @using (Html.BeginForm())
 {
     <p>
         找尋條件&名稱&瀏覽次數: @Html.TextBox("SearchString")  
-        <input type="submit" value="Search" /></p>
+        <input type="submit" value="搜尋" /></p>
 }
 <div class="table-responsive"> 
 <table class="table table-hover" style="table-layout:fixed">
@@ -33,9 +33,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.商品名稱)
             </th>
-       @*     <th>
+        @*    <th>
                 @Html.DisplayNameFor(model => model.商品主圖)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.商品簡述)
             </th>
@@ -50,14 +50,14 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.商品分類)
-            </th>*@
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.商品條件)
             </th>
-            <th>
+@*            <th>
                 @Html.DisplayNameFor(model => model.租賃時間下限)
-            </th>
-           @* <th>
+            </th>*@
+            @*<th>
                 @Html.DisplayNameFor(model => model.商品參數)
             </th>*@
             <th>
@@ -79,9 +79,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.聯絡line)
             </th>
-            <th>
+         @*   <th>
                 @Html.DisplayNameFor(model => model.聯絡網址)
-            </th>
+            </th>*@
             <th>
                @* @Html.DisplayNameFor(model => model.創建時間)*@
                  @Html.ActionLink("註冊時間", "Index", new { sortOrder = ViewBag.DateSortParm })
@@ -104,9 +104,9 @@
             <td class="content">
                 @Html.DisplayFor(modelItem => item.商品名稱)
             </td>
-     @*     <td class="content">
+        @*  <td class="content">
                 @Html.DisplayFor(modelItem => item.商品主圖)
-            </td>
+            </td>*@
             <td class="content" >
                 @Html.DisplayFor(modelItem => item.商品簡述)
             </td>
@@ -121,14 +121,14 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.商品分類)
-            </td>*@
+            </td>
             <td class="content" >
                 @Html.DisplayFor(modelItem => item.商品條件)
             </td>
-            <td>
+           @* <td>
                 @Html.DisplayFor(modelItem => item.租賃時間下限)
-            </td>
-            @*<td>
+            </td>*@
+           @* <td>
                 @Html.DisplayFor(modelItem => item.商品參數)
             </td>*@
             <td class="content" >
@@ -149,9 +149,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.聯絡line)
             </td>
-            <td class="content" >
+           @* <td class="content" >
                 @Html.DisplayFor(modelItem => item.聯絡網址)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.創建時間)
             </td>
@@ -165,9 +165,9 @@
                 @Html.DisplayFor(modelItem => item.Is刪除)
             </td>*@
             <td>
-                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.商品id">Edit</a> |
-                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.商品id">Details</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.商品id">Delete</a>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.商品id">編輯商品 </a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.商品id">商品詳細資訊</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.商品id">刪除商品</a>
             </td>
         </tr>
 }

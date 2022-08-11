@@ -3,7 +3,7 @@
 }
 
 <div class="text-center" style="margin-bottom:50px">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">歡迎回來</h1>
    @* <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
   
 
@@ -43,17 +43,17 @@
 
 </div>
 *@
-<div class="container">
+<div class="container" style="margin-bottom:20px">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
-             <div> <h4>會員使用刊登商品數量</h4></div> 
+             <div> <h4 style="text-align:center">會員使用刊登商品數量</h4></div> 
                 <canvas id="myChart"></canvas>
         </div>
 
    
                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
-             <div> <h4>每月銷售金額</h4></div> 
-                <canvas id="myChart4"></canvas>
+             <div> <h4 style="text-align:center">每月銷售金額</h4></div> 
+                <canvas id="myChart2"></canvas>
         </div>
     </div>
 </div>
@@ -62,15 +62,15 @@
 <div class="container">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
-             <div> <h4>會員成長人數</h4></div> 
+             <div> <h4 style="text-align:center">會員總成長人數</h4></div> 
                 <canvas id="myChart3"></canvas>
         </div>
 
   
 
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12"  >
-             <div> <h4>商品銷售數量排行</h4></div> 
-                <canvas id="myChart2"></canvas>
+             <div> <h4 style="text-align:center">商品銷售數量排行</h4></div> 
+                <canvas id="myChart4"></canvas>
         </div>
     </div>
 </div>
@@ -120,40 +120,30 @@ var ctx = document.getElementById("myChart"),
                 }
             }
         });
-
- 
- var itemData = @Html.Raw( ViewBag.銷售數量);
-var ctx = document.getElementById("myChart2"),
-        example = new Chart(ctx, {
-            type: "bar", // 圖表類型
+        
+           var money = @Html.Raw( ViewBag.銷售金額 );
+        var ctx4 = document.getElementById('myChart2').getContext('2d');
+        var myChart4 = new Chart(ctx4, {
+            type: 'bar',
             data: {
-                labels: [ "均一價", "三等格格", "二等格格",'四等艙' ], // 標題
+                //labels: ['TIIDA大空間', '二等格格', '三等艙', '三等格格','小倉庫','小酒窖', '六等艙', '文件箱', '四等倉','均一價','車庫','單層酒櫃','頭等格格'],
+                labels: ['七月', '八月',],
                 datasets: [{
-                    label :"商品數量",
-                    data: itemData,     // 資料
-                    backgroundColor: [  // 背景色 (照順序輪用)
+                    label: '每月銷售金額',
+                    data: money,
+                    fill: false,
+                    backgroundColor:[  // 背景色 (照順序輪用)
+                        "#E3170D",
                         "LightSkyBlue",
                         "LightPink",
-                        "LightGray",
                         "LightBlue",
                         
                     ],
                 }]
             },
-            options: {
-
-                maintainAspectRatio: true, // 固定長寬比
-                responsive: true,
-                plugins: {
-                    legend: {
-                        
-                        position: 'top',
-                        //boxWidth:50
-                     
-                    }
-                }
-            }
         });
+ 
+
 
 
 
@@ -171,9 +161,10 @@ var ctx = document.getElementById("myChart2"),
                     data: number,
                     fill: false,
                     backgroundColor:[  // 背景色 (照順序輪用)
-                        "LightSkyBlue",
-                        "LightPink",
-                        "LightBlue",
+                        "#FF0000",
+                        //"LightSkyBlue",
+                        //"LightPink",
+                        //"LightBlue",
                         
                     ],
                 }]
@@ -183,29 +174,42 @@ var ctx = document.getElementById("myChart2"),
 
 
 
-        
-
-
-           var money = @Html.Raw( ViewBag.銷售金額 );
-        var ctx4 = document.getElementById('myChart4').getContext('2d');
-        var myChart4 = new Chart(ctx4, {
-            type: 'bar',
+       var itemData = @Html.Raw( ViewBag.銷售數量);
+var ctx = document.getElementById("myChart4"),
+        example = new Chart(ctx, {
+            type: "bar", // 圖表類型
             data: {
-                //labels: ['TIIDA大空間', '二等格格', '三等艙', '三等格格','小倉庫','小酒窖', '六等艙', '文件箱', '四等倉','均一價','車庫','單層酒櫃','頭等格格'],
-                labels: ['七月', '八月',],
+                labels: [ "均一價", "三等格格", "二等格格",'四等艙' ], // 標題
                 datasets: [{
-                    label: '每月銷售金額',
-                    data: money,
-                    fill: false,
-                    backgroundColor:[  // 背景色 (照順序輪用)
+                    label :"商品數量",
+                    data: itemData,     // 資料
+                    backgroundColor: [  // 背景色 (照順序輪用)
+                        "LightGray",
+                         "LightPink",
                         "LightSkyBlue",
-                        "LightPink",
-                        "LightBlue",
+                       
+                        
+                     
                         
                     ],
                 }]
             },
-        });
+            options: {
+
+                maintainAspectRatio: true, // 固定長寬比
+                responsive: true,
+                plugins: {
+                    legend: {
+                        
+                        position: 'top',
+                        //boxWidth:50
+                     
+                    }
+                }
+            }
+        });  
+
+
       
 
  

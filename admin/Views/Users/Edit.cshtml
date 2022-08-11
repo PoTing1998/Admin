@@ -4,9 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>編輯會員資訊</h1>
 
-<h4>使用者資訊</h4>
+<h4>會員資訊</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -94,14 +94,14 @@
                 <span asp-validation-for="備註" class="text-danger"></span>
             </div>
             <div style="padding-top:10px" class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="存檔" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a id="list" asp-action="Index">Back to List</a>
+<div style="padding-top:10px">
+    <a class="btn btn-success" id="list" asp-action="Index">返回列表</a>
 </div>
 
 @section Scripts {

@@ -11,16 +11,16 @@
 }
 
 
-<h1>商品詳細資訊</h1>
+<h1>產品詳細資訊</h1>
 
-<p>
+@*<p>
     <a class="btn btn-warning" asp-action="Create">Create New</a>
-</p>
+</p>*@
 @using (Html.BeginForm())
 {
     <p>
        商品名稱&單價: @Html.TextBox("SearchString")  
-        <input type="submit" value="Search" /></p>
+        <input type="submit" value="搜尋" /></p>
 }
 <div class="table-responsive">
 <table class="table table-hover" style="table-layout:fixed">
@@ -108,9 +108,9 @@
                 @Html.DisplayFor(modelItem => item.商品id)
             </td>
             <td>
-                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.子項id">Edit</a> |
-                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.子項id">Details</a> |
-                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.子項id">Delete</a>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.子項id">編輯商品</a> |
+                <a class="btn btn-info" asp-action="Details" asp-route-id="@item.子項id">商品詳細資訊 </a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.子項id">刪除商品</a>
             </td>
         </tr>
 }
