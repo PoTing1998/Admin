@@ -67,54 +67,66 @@ th {
         }
 
         td:nth-of-type(2):before {
-            content: "商品條件";
+            content: "商品簡述";
             color: #0e9893;
         }
 
         td:nth-of-type(3):before {
-            content: "租賃時間下限";
+            content: "商品詳述";
             color: #0e9893;
         }
 
         td:nth-of-type(4):before {
-            content: "賣方ID";
+            content: "郵遞區號";
             color: #0e9893;
         }
 
         td:nth-of-type(5):before {
-            content: "瀏覽次數";
+            content: "地址";
             color: #0e9893;
         }
 
         td:nth-of-type(6):before {
-            content: "聯絡姓名";
+            content: "商品分類";
             color: #0e9893;
         }
 
         td:nth-of-type(7):before {
-            content: "聯絡Email";
+            content: "商品條件";
             color: #0e9893;
         }
 
         td:nth-of-type(8):before {
-            content: "聯絡電話";
+            content: "賣方ID";
             color: #0e9893;
         }
 
         td:nth-of-type(9):before {
-            content: "聯絡line";
+            content: "瀏覽次數";
             color: #0e9893;
         }
         td:nth-of-type(10):before {
-            content: "聯絡網址";
+            content: "聯絡姓名";
             color: #0e9893;
         }
         td:nth-of-type(11):before {
-            content: "註冊時間";
+            content: "聯絡Mail";
             color: #0e9893;
         }
         td:nth-of-type(12):before {
-            content: "更改時間";
+            content: "聯絡電話";
+            color: #0e9893;
+        }
+        td:nth-of-type(13):before {
+            content: "聯絡Line";
+            color: #0e9893;
+        }
+        td:nth-of-type(14):before {
+            content: "註冊時間";
+            color: #0e9893;
+        }
+        td:nth-of-type(15):before {
+            content: "資料更改時間";
             color: #0e9893;
         }
 }

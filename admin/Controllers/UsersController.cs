@@ -24,28 +24,28 @@ namespace admin.Controllers
         {
             int pageSize = 10;
             int pageNumber = (page ?? 1);
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            ViewBag.DateSortParm = String.IsNullOrEmpty(sortOrder) ? "Date_desc" : "";
+            ViewBag.UpdateSortParm = sortOrder == "Update" ? "Update_desc" : "Update";
             var Users = from s in _context.Users
                         select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                Users = _context.Users.Where(s => s.姓名.Contains(searchString) || s.地址.Contains(searchString)); ;
+                Users = _context.Users.Where(s => s.姓名.Contains(searchString) || s.地址.Contains(searchString)|| s.帳號權限.Contains(searchString)); ;
             }
 
             switch (sortOrder)
             {
-                case "name_desc":
-                    Users = Users.OrderByDescending(s => s.姓名);
-                    break;
-                case "Date":
-                    Users = Users.OrderBy(s => s.註冊時間);
-                    break;
-                case "date_desc":
+                case "Date_desc":
                     Users = Users.OrderByDescending(s => s.註冊時間);
                     break;
+                case "Update":
+                    Users = Users.OrderBy(s => s.資料更新時間);
+                    break;
+                case "Update_desc":
+                    Users = Users.OrderByDescending(s => s.資料更新時間);
+                    break;
                 default:
-                    Users = Users.OrderBy(s => s.姓名);
+                    Users = Users.OrderBy(s => s.註冊時間);
                     break;
             }
 

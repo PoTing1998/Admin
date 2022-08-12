@@ -1,10 +1,10 @@
 ﻿@model admin.Models.Item
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "刪除商品";
 }
 
-<h1>刪除商品</h1>
+@*<h1>刪除商品</h1>*@
 
 <h3>確定刪除此商品嗎?</h3>
 <div>
@@ -17,12 +17,12 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.商品名稱)
         </dd>
-        <dt class = "col-sm-2">
+@*        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.商品主圖)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.商品主圖)
-        </dd>
+        </dd>*@
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.商品簡述)
         </dt>

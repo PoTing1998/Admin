@@ -7,7 +7,7 @@
 
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "商品資訊列表";
 }
 @section Styles{
     <link href='~/css/itemsTable.css' rel="stylesheet">
@@ -15,7 +15,7 @@
 
 
 
-<h1>商品資訊</h1>
+<h1>商品資訊列表</h1>
 
 @*<p>
     <a class="btn btn-warning" asp-action="Create">Create New</a>
@@ -23,7 +23,7 @@
 @using (Html.BeginForm())
 {
     <p>
-        找尋條件&名稱&瀏覽次數: @Html.TextBox("SearchString")  
+        找尋條件&名稱&瀏覽次數&分類: @Html.TextBox("SearchString")  
         <input type="submit" value="搜尋" /></p>
 }
 <div class="table-responsive"> 
@@ -116,10 +116,16 @@
             <td>
                 @Html.DisplayFor(modelItem => item.商品郵遞區號)
             </td>
-            <td>
+                   <td style=" max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap" >
                 @Html.DisplayFor(modelItem => item.商品地址)
             </td>
-            <td>
+              <td style=" max-width: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap" >
                 @Html.DisplayFor(modelItem => item.商品分類)
             </td>
             <td class="content" >

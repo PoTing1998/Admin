@@ -31,7 +31,7 @@ namespace admin.Controllers
                        select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                orderOrderings = _context.OrderOrderings.Where(s => s.商品名稱快照.Contains(searchString) ); ;
+                orderOrderings = _context.OrderOrderings.Where(s => s.商品名稱快照.Contains(searchString) || s.商品地址快照.Contains(searchString) || s.子項名稱快照.Contains(searchString) ); ;
             }
 
             switch (sortOrder)

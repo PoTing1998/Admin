@@ -3,46 +3,15 @@
 }
 
 <div class="text-center" style="margin-bottom:50px">
-    <h1 class="display-4">歡迎回來</h1>
+    <h1 class="display-4">樂酷樂庫</h1>
+    <br />
+    <h3>管理后台</h3>
    @* <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>*@
   
 
 </div>
 
-@*<div class="container">
-    <div class="row">
-     <div class="col-4" >
-    <div> <h4>會員使用刊登商品數量</h4></div> 
-<canvas id="mychart"></canvas>
-</div>
 
-      <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12"  >
-             <h4 style="text-align:center"> <span >商品銷售數量 </span></h4>
-              <canvas id="myChart2"></canvas>
-        </div>
-
-    </div>
-    
-
-</div>
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
-               <h4 style="text-align:center"> <span >會員下單數量 </span></h4>
-                 <canvas id="mychart3"></canvas>
-
-        </div>
-
-       
-
-    </div>
-    
-
-</div>
-*@
 <div class="container" style="margin-bottom:20px">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
@@ -62,7 +31,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12" >
-             <div> <h4 style="text-align:center">會員總成長人數</h4></div> 
+             <div> <h4 style="text-align:center">會員每月增長人數</h4></div> 
                 <canvas id="myChart3"></canvas>
         </div>
 
@@ -154,7 +123,6 @@ var ctx = document.getElementById("myChart"),
         var myChart = new Chart(ctx2, {
             type: 'line',
             data: {
-                //labels: ['TIIDA大空間', '二等格格', '三等艙', '三等格格','小倉庫','小酒窖', '六等艙', '文件箱', '四等倉','均一價','車庫','單層酒櫃','頭等格格'],
                 labels: ['六月','七月','八月'],
                 datasets: [{
                     label: '成長人數',

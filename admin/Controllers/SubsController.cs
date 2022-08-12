@@ -28,7 +28,7 @@ namespace admin.Controllers
                         select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                subs = _context.Subs.Where(s => s.子項名稱.Contains(searchString) || s.子項單價.ToString().Contains(searchString)); ;
+                subs = _context.Subs.Where(s => s.子項名稱.Contains(searchString) || s.子項單價.ToString().Contains(searchString) || s.子項數量.ToString().Contains(searchString)); ;
             }
 
             switch (sortOrder)

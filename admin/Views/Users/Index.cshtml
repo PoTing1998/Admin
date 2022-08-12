@@ -4,7 +4,7 @@
 @model IEnumerable<admin.Models.User>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "會員列表";
 }
 
 
@@ -22,7 +22,7 @@
 @using (Html.BeginForm())
 {
     <p>
-        姓名&地址: @Html.TextBox("SearchString")  
+        姓名&地址&帳號權限: @Html.TextBox("SearchString")  
         <input type="submit" value="搜尋" /></p>
 }
 <div class="table-responsive"> 
@@ -66,8 +66,8 @@
                 @Html.DisplayNameFor(model => model.帳號權限)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.資料更新時間)
-                 
+@*                @Html.DisplayNameFor(model => model.資料更新時間)*@
+                @Html.ActionLink("註冊時間", "Index", new { sortOrder =  ViewBag.UpdateSortParm })
             </th>
           @*  <th> 
                 @Html.DisplayNameFor(model => model.Is啟用)

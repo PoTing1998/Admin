@@ -42,7 +42,7 @@ namespace admin.Controllers
             if (!String.IsNullOrEmpty(searchString))
             {
                 items = _context.Items.Where(s => s.商品名稱.Contains(searchString)
-                                       || s.商品條件.Contains(searchString) || s.瀏覽次數.ToString().Contains(searchString)); ;
+                                       || s.商品條件.Contains(searchString) || s.瀏覽次數.ToString().Contains(searchString) || s.商品分類.Contains(searchString)); ;
             }
 
             switch (sortOrder)

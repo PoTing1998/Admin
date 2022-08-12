@@ -4,14 +4,14 @@
 @model IEnumerable<admin.Models.Sub>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "商品型態列表";
 }
 @section Styles{
     <link href='~/css/SubsTable.css' rel="stylesheet">
 }
 
 
-<h1>產品詳細資訊</h1>
+<h1>商品型態列表</h1>
 
 @*<p>
     <a class="btn btn-warning" asp-action="Create">Create New</a>
@@ -19,7 +19,7 @@
 @using (Html.BeginForm())
 {
     <p>
-       商品名稱&單價: @Html.TextBox("SearchString")  
+       商品名稱&單價&商品數量: @Html.TextBox("SearchString")  
         <input type="submit" value="搜尋" /></p>
 }
 <div class="table-responsive">
@@ -70,14 +70,15 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-          <td style="width:100px">
+                <td style="min-width:100px">
+      
                 @Html.DisplayFor(modelItem => item.子項名稱)
             </td>
           @*  <td class="content">
                @Html.DisplayFor(modelItem => item.子項主圖)
 
             </td>*@
-             <td class="content">
+            <td class="content"style="max-width:80px">   
                 @Html.DisplayFor(modelItem => item.子項簡述)
             </td>
             <td>

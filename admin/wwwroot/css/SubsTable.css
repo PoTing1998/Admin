@@ -240,7 +240,7 @@ li {
 }
 
 .content {
-    max-width: 110px;
+    max-width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

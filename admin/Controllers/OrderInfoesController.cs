@@ -31,7 +31,7 @@ namespace admin.Controllers
                        select s;
             if (!String.IsNullOrEmpty(searchString))
             {
-                orderInfos = _context.OrderInfos.Where(s => s.付款金額.ToString().Contains(searchString) ); ;
+                orderInfos = _context.OrderInfos.Where(s => s.付款金額.ToString().Contains(searchString) || s.付款方式.Contains(searchString)); ;
             }
             switch (sortOrder)
             {
