@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "樂酷樂庫";
 }
 
 <div class="text-center" style="margin-bottom:30px">
@@ -142,22 +142,23 @@ var ctx = document.getElementById("myChart"),
         });
       
 
-
+        //,'四等艙'
 
        var itemData = @Html.Raw( ViewBag.銷售數量);
 var ctx = document.getElementById("myChart4"),
         example = new Chart(ctx, {
             type: "bar", // 圖表類型
             data: {
-                labels: [ "均一價", "三等格格", "二等格格",'四等艙' ], // 標題
+                labels: [ "均一價", "三等格格", "二等格格" ], // 標題
                 datasets: [{
                     label :"商品數量",
                     data: itemData,     // 資料
                     backgroundColor: [  // 背景色 (照順序輪用)
                         "#FF3030",
-                        "LightGray",
+                        "LightPink",
                         "#EEEE00",
-                         "LightPink",
+                         
+                         "LightGray",
                         "LightSkyBlue",
                        
                         

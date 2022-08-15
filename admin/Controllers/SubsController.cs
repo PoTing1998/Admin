@@ -24,6 +24,7 @@ namespace admin.Controllers
             int pageNumber = (page ?? 1);
             ViewBag.PriceSortParm = String.IsNullOrEmpty(sortOrder) ? "price_desc" : "";
             ViewBag.DateSortParm = sortOrder == "Date" ? "date_desc" : "Date";
+            //ViewBag. SortParm = sortOrder == "Date" ? "date_desc" : "Date";
             var subs = from s in _context.Subs
                         select s;
             if (!String.IsNullOrEmpty(searchString))
